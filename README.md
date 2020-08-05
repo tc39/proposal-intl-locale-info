@@ -1,7 +1,21 @@
-# template-for-proposals
+# Intl Locale Infor API
 
-A repository template for ECMAScript proposals.
 
+## Stage 
+Stage 0
+
+## Champion
+* Frank Tang @FrankYFTang
+
+## Scope
+
+A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimun day in the first week), hour cycle used in the locale, measurement system used in the locale.
+
+* Week Data ( see https://github.com/tc39/ecma402/issues/6 )
+* Hour Cycle
+
+
+# TO BE DELETED- FROM TEMPLATE
 ## Before creating a proposal
 
 Please ensure the following:
