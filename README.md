@@ -11,8 +11,11 @@ Stage 0
 
 A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimun day in the first week), hour cycle used in the locale, measurement system used in the locale.
 
-* Week Data ( see https://github.com/tc39/ecma402/issues/6 )
+* Week Data: (User request: https://github.com/tc39/ecma402/issues/6 )
+  * Prior Art: [mozIntl.getCalendarInfo(locale)](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getcalendarinfo-locale)
 * Hour Cycle
+* Direction (User request: https://github.com/tc39/ecma402/issues/205 )
+  * Prior Art: [mozIntl.getLocaleInfo(locales, options)](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getlocaleinfo-locales-options)
 
 
 # TO BE DELETED- FROM TEMPLATE
