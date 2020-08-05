@@ -1,4 +1,4 @@
-# Intl Locale Infor API
+# Intl Locale Info API
 
 
 ## Stage 
