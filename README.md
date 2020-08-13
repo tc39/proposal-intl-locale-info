@@ -12,7 +12,9 @@ Stage 0
 A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimun day in the first week), hour cycle used in the locale, measurement system used in the locale.
 
 * Week Data: (User request: https://github.com/tc39/ecma402/issues/6 )
-  * Prior Art: [mozIntl.getCalendarInfo(locale)](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getcalendarinfo-locale)
+  * Prior Arts: 
+    * [mozIntl.getCalendarInfo( locale )](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getcalendarinfo-locale)
+    * ICU4J [Calendar.getWeekData()](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/util/Calendar.html#getWeekData--) and [Calendar.WeekData](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/util/Calendar.WeekData.html#minimalDaysInFirstWeek)
 * Hour Cycle
 * Direction (User request: https://github.com/tc39/ecma402/issues/205 )
   * Prior Art: [mozIntl.getLocaleInfo(locales, options)](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getlocaleinfo-locales-options)
