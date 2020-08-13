@@ -25,9 +25,26 @@ A proposal to expose Locale information, such as week data (first day in a week,
     * ICU4J [LocaleData.getMeasurementSystem](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/util/LocaleData.html#getMeasurementSystem-com.ibm.icu.util.ULocale-) and [LocaleData.MeasurementSystem](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/util/LocaleData.MeasurementSystem.html)
 
 ## High Level Design
-### Week Data
+### Option 1
+Add getter to Intl.Locale for each value:
+
 ```
-let weekInfo = Intl.getWeekInfo(["en-US"])
++ get Intl.Locale.prototype.firstDayOfWeek
++ get Intl.Locale.prototype.minimalDaysInFirstWeek
++ get Intl.Locale.prototype.weekendStart
++ get Intl.Locale.prototype.weekendEnd
++ get Intl.Locale.prototype.direction
++ get Intl.Locale.prototype.measurementSystem
++ get Intl.Locale.prototype.defaultHourCycle
++ get Intl.Locale.prototype.defaultCalendar
++ get Intl.Locale.prototype.commonCalendars
+
+```
+### Option 2
+Add methods to Intl to get object to contains group of information:
+#### Week Data
+```
+let weekInfo = Intl.weekInfo("en-US")
 // { 
 //  locale: "en-US", 
 //  firstDayOfWeek: 7,
@@ -37,6 +54,21 @@ let weekInfo = Intl.getWeekInfo(["en-US"])
 // }
 ```
 Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
+#### Text Information
+```
+let textInfo = Intl.textInfo("ar")
+// { direction: "rtl" }
+```
+#### Defaults
+```
+let defaults = Intl.defaults("ja")
+// { calendar: "gregory", hourCycle: "h23", commonCalendars: ["gregory", "japanes"] }
+```
+#### Unit Information
+```
+let unitInfo = Intl.unitInfo("ar")
+// { measurementSystem: "US" }
+```
 
 # TO BE DELETED- FROM TEMPLATE
 ## Before creating a proposal
