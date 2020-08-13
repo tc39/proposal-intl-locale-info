@@ -17,6 +17,19 @@ A proposal to expose Locale information, such as week data (first day in a week,
 * Direction (User request: https://github.com/tc39/ecma402/issues/205 )
   * Prior Art: [mozIntl.getLocaleInfo(locales, options)](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getlocaleinfo-locales-options)
 
+## High Level Design
+### Week Data
+```
+let weekInfo = Intl.getWeekInfo(["en-US"])
+// { 
+//  locale: "en-US", 
+//  firstDayOfWeek: 7,
+//  minimalDaysInFirstWeek: 4, 
+//  weekendStart:  6,
+//  weekendEnd: 7,
+// }
+```
+Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
 
 # TO BE DELETED- FROM TEMPLATE
 ## Before creating a proposal
