@@ -2,7 +2,9 @@
 
 
 ## Stage 
-Stage 0
+Stage 1
+
+Advanced to [Stage 1](https://docs.google.com/presentation/d/1NwYFb6jm5aQOiL9urMM-GaEFMhll5sYcZJYQ1WZhTZ8/edit#slide=id.p) in TC39 2020-09 meeting.
 
 ## Champion
 * Frank Tang @FrankYFTang
