@@ -15,6 +15,7 @@ A proposal to expose Locale information, such as week data (first day in a week,
 
 * Week Data: (User request: https://github.com/tc39/ecma402/issues/6 )
   * Prior Arts: 
+    * [weekstart](https://github.com/gamtiq/weekstart) JS Library to get first day of week. getWeekStartByRegion(RegionCode) / getWeekStartByLocale(locale);
     * [mozIntl.getCalendarInfo( locale )](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getcalendarinfo-locale)
     * ["date-fns/is_weekend" an non-i18n weekend javascript library](https://date-fns.org/v1.9.0/docs/isWeekend)
     * ['date-fns/start_of_week' an non-i18n weekend javascript library](https://date-fns.org/v1.29.0/docs/startOfWeek)
