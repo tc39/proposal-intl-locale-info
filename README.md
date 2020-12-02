@@ -1,6 +1,7 @@
 # Intl Locale Info API
 
-
+## Draft Spec
+https://tc39.github.io/proposal-intl-locale-info 
 ## Stage 
 Stage 1
 
