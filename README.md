@@ -37,7 +37,40 @@ A proposal to expose Locale information, such as week data (first day in a week,
     * ICU4C [ulocdata_getMeasurementSystem](https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/ulocdata_8h.html#a7abb69df19b1080b76fcc26ec0ea0978)
 
 ## High Level Design
-### Option 1
+
+### Option A
+Add methods to Intl to get object to contains group of information:
+#### Week Data
+```
+let l = new Intl.Locale("en-US")
+let weekInfo = l.weekInfo;
+// { 
+//  weekStart: 7,
+//  weekendStart:  6,
+//  weekendEnd: 7,
+//  minimalDaysInFirstWeek: 4, 
+// }
+```
+Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
+#### Text Information
+```
+l = new Intl.Locale("ar")
+let textInfo = l.textInfo;
+// { direction: "rtl" }
+```
+#### Defaults
+```
+l = new Intl.Locale("ja")
+let defaults = l.defaults;
+// { calendar: "gregory", hourCycle: "h23", commonCalendars: ["gregory", "japanes"] }
+```
+#### Unit Information
+```
+l = new Intl.Locale("ar")
+let unitInfo = l.unitInfo;
+// { measurementSystem: "ussystem" }
+```
+### Option B
 Add getter to Intl.Locale for each value:
 
 ```
@@ -52,36 +85,6 @@ Add getter to Intl.Locale for each value:
 + get Intl.Locale.prototype.commonCalendars
 
 ```
-### Option 2
-Add methods to Intl to get object to contains group of information:
-#### Week Data
-```
-let weekInfo = Intl.weekInfo("en-US")
-// { 
-//  locale: "en-US", 
-//  firstDayOfWeek: 7,
-//  minimalDaysInFirstWeek: 4, 
-//  weekendStart:  6,
-//  weekendEnd: 7,
-// }
-```
-Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
-#### Text Information
-```
-let textInfo = Intl.textInfo("ar")
-// { direction: "rtl" }
-```
-#### Defaults
-```
-let defaults = Intl.defaults("ja")
-// { calendar: "gregory", hourCycle: "h23", commonCalendars: ["gregory", "japanes"] }
-```
-#### Unit Information
-```
-let unitInfo = Intl.unitInfo("ar")
-// { measurementSystem: "US" }
-```
-
 # TO BE DELETED- FROM TEMPLATE
 ## Before creating a proposal
 
