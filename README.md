@@ -38,6 +38,13 @@ A proposal to expose Locale information, such as week data (first day in a week,
     * ICU4J [LocaleData.getMeasurementSystem](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/util/LocaleData.html#getMeasurementSystem-com.ibm.icu.util.ULocale-) and [LocaleData.MeasurementSystem](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/util/LocaleData.MeasurementSystem.html)
     * ICU4C [ulocdata_getMeasurementSystem](https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/ulocdata_8h.html#a7abb69df19b1080b76fcc26ec0ea0978)
 
+## Motivation / Use Case
+
+Locale Information is necessary for many low level operations.
+
+* Direction in textInfo will be needed for layout, and for localization information (bidi boundaries with placeholders etc.)
+* WeekInfo will be needed for calendar widgets and applications to display correct monthly and weekly views.
+
 ## High Level Design
 
 v8 prototype of Option A in https://chromium-review.googlesource.com/c/v8/v8/+/2570218
