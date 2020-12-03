@@ -42,23 +42,17 @@ A proposal to expose Locale information, such as week data (first day in a week,
 
 Add methods to Intl to get object to contains group of information:
 #### Week Data
+$ out/x64.release/d8 --harmony_intl_locale_info
 ```
-let l = new Intl.Locale("en-US")
-let weekInfo = l.weekInfo;
-// { 
-//  weekStart: 7,
-//  weekendStart:  6,
-//  weekendEnd: 7,
-//  minimalDaysInFirstWeek: 4, 
-// }
-l.weekInfo.weekstart
-// 7
-l.weekInfo.weekendStart
-// 6
-l.weekInfo.weekendStart
-// 7
-l.minimalDaysInFirstWeek
-// 4
+let he = new Intl.Locale("he")
+he.weekInfo
+// {firstDay: 7, weekendStart: 5, weekendEnd: 6, minimalDays: 1}
+let af = new Intl.Locale("af")
+af.weekInfo
+// {firstDay: 7, weekendStart: 6, weekendEnd: 7, minimalDays: 1}
+enGB = new Intl.Locale("en-GB")
+enGB.weekInfo
+// {firstDay: 1, weekendStart: 6, weekendEnd: 7, minimalDays: 4}
 ```
 Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
 #### Text Information
