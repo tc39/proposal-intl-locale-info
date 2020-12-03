@@ -40,9 +40,13 @@ A proposal to expose Locale information, such as week data (first day in a week,
 
 ## High Level Design
 
+v8 prototype of Option A in https://chromium-review.googlesource.com/c/v8/v8/+/2570218
+
+$ out/x64.release/d8 --harmony_intl_locale_info
+
 Add methods to Intl to get object to contains group of information:
 #### Week Data
-$ out/x64.release/d8 --harmony_intl_locale_info
+
 ```
 let he = new Intl.Locale("he")
 he.weekInfo
@@ -89,7 +93,6 @@ let defaults = l.defaults;
 // { calendar: "gregory", hourCycle: "h23", commonCalendars: ["gregory", "japanes"] }
 ```
 
-v8 prototype of Option A in https://chromium-review.googlesource.com/c/v8/v8/+/2570218
 
 # TO BE DELETED- FROM TEMPLATE
 ## Before creating a proposal
