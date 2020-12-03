@@ -68,9 +68,19 @@ l.textInfo.direction
 ```
 l = new Intl.Locale("ar")
 let unitInfo = l.unitInfo;
-// { measurementSystem: "ussystem" }
+// {measurementSystem: "metric"}
 l.unitInfo.measurementSystem
-// ussystem
+// metric
+l = new Intl.Locale("en-GB")
+l.unitInfo
+// {measurementSystem: "uksystem"}
+l = new Intl.Locale("en-GB")
+l.unitInfo
+// {measurementSystem: "uksystem"}
+l = new Intl.Locale("en")
+l.unitInfo
+// {measurementSystem: "ussystem"}
+
 ```
 #### Defaults
 ```
