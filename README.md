@@ -7,7 +7,7 @@ Stage 2
 
 * Advanced to [Stage 1](https://docs.google.com/presentation/d/1NwYFb6jm5aQOiL9urMM-GaEFMhll5sYcZJYQ1WZhTZ8/edit#slide=id.p) in TC39 2020-09 meeting.
 * Plan to propose to [advance to Stage 2](https://docs.google.com/presentation/d/1ct7h9pLHmXCwojGlReNjAT9RgysqLk_3lyUcllnOQYs/) in [TC39 2021-01-25~28 meeting](https://github.com/tc39/agendas/blob/master/2021/01.md).
-* Jan 2021 TC39 meeting approve to move to Stage 2 w/ the condiction to drop unitInfo
+  * Jan 2021 TC39 meeting approve to move to Stage 2 w/ the condiction to drop unitInfo
 
 ## Champion
 * Frank Tang @FrankYFTang
