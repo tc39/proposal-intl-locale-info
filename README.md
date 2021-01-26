@@ -76,7 +76,8 @@ l.textInfo.direction
 // rtl
 ```
 
-#### Unit Information
+#### ~Unit Information~
+
 ```
 l = new Intl.Locale("ar")
 let unitInfo = l.unitInfo;
@@ -94,6 +95,7 @@ l.unitInfo
 // {measurementSystem: "ussystem"}
 
 ```
+
 #### Defaults
 ```
 l = new Intl.Locale("ja")
