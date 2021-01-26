@@ -384,25 +384,6 @@
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-Intl.Locale.prototype.unitInfo">
-      <h1><ins>get Intl.Locale.prototype.unitInfo</ins></h1>
-      <p><ins>`Intl.Locale.prototype.unitInfo` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to Locale data specified in <a href="https://www.unicode.org/reports/tr35/tr35-general.html#Measurement_System_Data">UTS 35's Measurement System Data</a>. Its get accessor function performs the following steps:</ins></p>
-      <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _info_ be ! ObjectCreate(%Object.prototype%).</ins>
-        1. <ins>Let _ms_ be *"metric"*.</ins>
-        1. <ins>If the normal measurement system in common everyday use in _locale_ is US system, then </ins>
-          1. <ins>Let _ms_ be *"ussystem"*.</ins>
-        1. <ins>Else if the normal measurement system in common everyday use in _locale_ is UK system, then </ins>
-          1. <ins>Let _ms_ be *"uksystem"*.</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"measurementSystem"*, _ms_)</ins>.
-        1. <ins>Return _info_.</ins>
-      </emu-alg>
-    </emu-clause>
-
     <emu-clause id="sec-Intl.Locale.prototype.weekInfo">
       <h1><ins>get Intl.Locale.prototype.weekInfo</ins></h1>
       <p><ins>`Intl.Locale.prototype.weekInfo` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to Locale data specified in <a href="https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Patterns_Week_Elements">UTS 35's Week Elements</a>. Its get accessor function performs the following steps:</ins></p>
