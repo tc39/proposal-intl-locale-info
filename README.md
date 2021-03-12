@@ -76,25 +76,7 @@ l.textInfo.direction
 // rtl
 ```
 
-#### ~Unit Information~ DROPPED FEATURE
 
-```
-l = new Intl.Locale("ar")
-let unitInfo = l.unitInfo;
-// {measurementSystem: "metric"}
-l.unitInfo.measurementSystem
-// metric
-l = new Intl.Locale("en-GB")
-l.unitInfo
-// {measurementSystem: "uksystem"}
-l = new Intl.Locale("en-GB")
-l.unitInfo
-// {measurementSystem: "uksystem"}
-l = new Intl.Locale("en")
-l.unitInfo
-// {measurementSystem: "ussystem"}
-
-```
 
 #### Defaults
 ```
@@ -133,3 +115,22 @@ d8> de.defaults
 ```
 
 
+#### ~Unit Information~ DROPPED FEATURE
+
+```
+l = new Intl.Locale("ar")
+let unitInfo = l.unitInfo;
+// {measurementSystem: "metric"}
+l.unitInfo.measurementSystem
+// metric
+l = new Intl.Locale("en-GB")
+l.unitInfo
+// {measurementSystem: "uksystem"}
+l = new Intl.Locale("en-GB")
+l.unitInfo
+// {measurementSystem: "uksystem"}
+l = new Intl.Locale("en")
+l.unitInfo
+// {measurementSystem: "ussystem"}
+
+```
