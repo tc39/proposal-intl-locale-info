@@ -353,20 +353,6 @@
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-Intl.Locale.prototype.defaults">
-      <h1><ins>get Intl.Locale.prototype.defaults</ins></h1>
-      <p><ins>`Intl.Locale.prototype.defaults` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</ins></p>
-      <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _info_ be ! ObjectCreate(%Object.prototype%).</ins>
-        1. <ins>(ftang TBW)</ins>
-        1. <ins>Return _info_.</ins>
-      </emu-alg>
-    </emu-clause>
-
     <emu-clause id="sec-Intl.Locale.prototype.textInfo">
       <h1><ins>get Intl.Locale.prototype.textInfo</ins></h1>
       <p><ins>`Intl.Locale.prototype.textInfo` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to Locale data specified in <a href="https://www.unicode.org/reports/tr35/tr35-general.html#Layout_Elements">UTS 35's Layouts Elements</a>. Its get accessor function performs the following steps:</ins></p>
