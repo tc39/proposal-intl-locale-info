@@ -36,7 +36,8 @@ Stage 2
 * Frank Tang @FrankYFTang
 
 ## Designated reviewers
-* TBD
+* Shane Carr @sffc
+* TBC
 
 ## ECMAScript editors
 *
