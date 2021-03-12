@@ -112,6 +112,19 @@ d8> de.defaults
 {calendars: ["gregory"], 
  collations: ["phonebook", "emoji", "eor"], 
  hourCycle: "h23"}
+d8> fa = new Intl.Locale("fa")
+fa
+d8> fa.defaults
+{calendars: ["persian", "gregory", "islamic", "islamic-civil", "islamic-tbla"], 
+ collations: ["emoji", "eor"], 
+ hourCycle: "h23"}
+d8> arSA = new Intl.Locale("ar-SA")
+ar-SA
+d8> arSA.defaults
+{calendars: ["islamic-umalqura", "gregory", "islamic", "islamic-rgsa"], 
+ collations: ["compat", "emoji", "eor"], 
+ hourCycle: "h12"}
+
 ```
 
 
