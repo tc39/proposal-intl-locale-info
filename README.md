@@ -10,8 +10,36 @@ Stage 2
   * Jan 2021 TC39 meeting approve to move to Stage 2 **WITH the condiction to drop unitInfo**
 * Plan to propose to [advance to Stage 3](https://docs.google.com/presentation/d/1h-iaDM5RiD5rpb0aYr1GMRLRRBh72zVEKtMyMJkCkfE/edit#slide=id.g98718d9573_0_37) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
 
+### Entrance Criteria for Stage 1 (Proposal)
+* Identified “champion” who will advance the addition: **Frank Yung-Fong Tang**
+* Prose outlining the problem or need and the general shape of a solution: **See this document**
+* Illustrative examples of usage: **See this document**
+* High-level API: **See this document**
+* Discussion of key algorithms, abstractions and semantics
+* Identification of potential “cross-cutting” concerns and implementation challenges/complexity
+* A publicly available repository for the proposal that captures the above requirements:
+* 
+### Entrance Criteria for Stage 2 (Draft)
+* Above
+* Initial spec text: DONE
+* **Acceptance Signifies**: The committee expects the feature to be developed and eventually included in the standard
+
+### Entrance Criteria for Stage 3 (Candidate)
+* Above
+* Complete spec text
+* Designated reviewers have signed off on the current spec text
+* All ECMAScript editors have signed off on the current spec text
+* **Acceptance Signifies**: The solution is complete and no further work is possible without implementation experience, significant usage and external feedback.
+
+
 ## Champion
 * Frank Tang @FrankYFTang
+
+## Designated reviewers
+* TBD
+
+## ECMAScript editors
+*
 
 ## Scope
 
