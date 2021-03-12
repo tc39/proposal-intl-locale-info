@@ -28,7 +28,7 @@ A proposal to expose Locale information, such as week data (first day in a week,
       * [Calendar::getFirstDayOfWeek](https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1Calendar.html#aa95d4e17ea169d0388a3a18489e67da0)
       * [Calendar::getMinimalDaysInFirstWeek](https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1Calendar.html#af10922ea91e4e4ccef6624ac3f18e621)
       * [Calendar::getDayOfWeekType](https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1Calendar.html#adc18b432f868737e115ece5f6e3c95ab)
-* Hour Cycle
+* Hour Cycle DRIPPED by Champion
 * Direction (User request: https://github.com/tc39/ecma402/issues/205 )
   * Prior Arts: 
     * [mozIntl.getLocaleInfo(locales, options)](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getlocaleinfo-locales-options)
@@ -74,57 +74,6 @@ let textInfo = l.textInfo;
 // { direction: "rtl" }
 l.textInfo.direction
 // rtl
-```
-
-
-
-#### Defaults
-```
-$ out/x64.release/d8 --harmony_intl_locale_info
-V8 version 9.1.0 (candidate)
-d8> ar = new Intl.Locale("ar")
-ar
-d8> ar.defaults
-{calendars: ["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"], 
- collations: ["compat", "emoji", "eor"], 
- hourCycle: "h12"}
-d8> ja = new Intl.Locale("ja")
-ja
-d8> ja.defaults
-{calendars: ["gregory", "japanese"], 
- collations: ["unihan", "emoji", "eor"], 
- hourCycle: "h23"}
-d8> enUS = new Intl.Locale("en-US")
-en-US
-d8> enUS.defaults
-{calendars: ["gregory"], 
- collations: ["emoji", "eor"], 
- hourCycle: "h12"}
-d8> zhTW = new Intl.Locale("zh-Hant")
-zh-Hant
-d8> zhTW.defaults
-{calendars: ["gregory", "roc", "chinese"], 
- collations: ["stroke", "big5han", "gb2312han", "pinyin", "unihan", "zhuyin", "emoji", "eor"], 
- hourCycle: "h12"}
-d8> de = new Intl.Locale("de")
-de
-d8> de.defaults
-{calendars: ["gregory"], 
- collations: ["phonebook", "emoji", "eor"], 
- hourCycle: "h23"}
-d8> fa = new Intl.Locale("fa")
-fa
-d8> fa.defaults
-{calendars: ["persian", "gregory", "islamic", "islamic-civil", "islamic-tbla"], 
- collations: ["emoji", "eor"], 
- hourCycle: "h23"}
-d8> arSA = new Intl.Locale("ar-SA")
-ar-SA
-d8> arSA.defaults
-{calendars: ["islamic-umalqura", "gregory", "islamic", "islamic-rgsa"], 
- collations: ["compat", "emoji", "eor"], 
- hourCycle: "h12"}
-
 ```
 
 
