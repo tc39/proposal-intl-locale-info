@@ -76,7 +76,7 @@ l.textInfo.direction
 // rtl
 ```
 
-#### ~Unit Information~
+#### ~Unit Information~ DROPPED FEATURE
 
 ```
 l = new Intl.Locale("ar")
