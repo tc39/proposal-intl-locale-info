@@ -44,7 +44,7 @@ Stage 2
 
 ## Scope
 
-A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimun day in the first week), and text direction ~hour cycle used in the locale, measurement system~ used in the locale.
+A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimun day in the first week), and text direction hour cycle used in the locale ~,measurement system used in the locale~.
 
 * Week Data: (User request: https://github.com/tc39/ecma402/issues/6 )
   * Prior Arts: 
