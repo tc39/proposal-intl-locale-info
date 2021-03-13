@@ -376,7 +376,9 @@
         1. <ins>Let _numberingSystemList_ be a List with numbering system identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the numbering system used for formatting, commonly used in the _locale_.</ins>
         1. <ins>Let _numberingSystems_ be CreateArrayFromList( _numberingSystemList_ ).</ins>
         1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"numberingSystems"*, _numberingSystems_).</ins>
-        1. <ins>Let _timeZoneList_ be a List with time zone name, which is a Zone or Link name of the IANA Time Zone Database, commonly used in the _locale_.</ins>
+        1. <ins>If the `unicode_language_id` production of _locale_ does not contain the `["-" unicode_region_subtag]` sequence, return _info_.</ins>
+        1. <ins>Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.</ins>
+        1. <ins>Let _timeZoneList_ be a List with time zone name, which is a Zone or Link name of the IANA Time Zone Database, commonly used in the _region_.</ins>
         1. <ins>Let _timeZones_ be CreateArrayFromList( _timeZoneList_ ).</ins>
         1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"timeZones"*, _timeZones_).</ins>
         1. <ins>Return _info_.</ins>
