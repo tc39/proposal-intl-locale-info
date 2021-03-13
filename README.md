@@ -85,7 +85,7 @@ $ out/x64.release/d8 --harmony_intl_locale_info
 Add methods to Intl to get object to contains group of information:
 #### Week Data
 
-```
+```js
 let he = new Intl.Locale("he")
 he.weekInfo
 // {firstDay: 7, weekendStart: 5, weekendEnd: 6, minimalDays: 1}
@@ -98,7 +98,7 @@ enGB.weekInfo
 ```
 Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
 #### Text Information
-```
+```js
 l = new Intl.Locale("ar")
 let textInfo = l.textInfo;
 // { direction: "rtl" }
@@ -107,7 +107,7 @@ l.textInfo.direction
 ```
 
 #### Defaults
-```
+```js
 $ out/x64.release/d8 --harmony_intl_locale_info
 V8 version 9.1.0 (candidate)
 d8> ar = new Intl.Locale("ar")
@@ -170,7 +170,7 @@ d8> arSA.defaults
 
 #### ~Unit Information~ DROPPED FEATURE
 
-```
+```js
 l = new Intl.Locale("ar")
 let unitInfo = l.unitInfo;
 // {measurementSystem: "metric"}
@@ -187,3 +187,4 @@ l.unitInfo
 // {measurementSystem: "ussystem"}
 
 ```
+
