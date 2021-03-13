@@ -106,6 +106,67 @@ l.textInfo.direction
 // rtl
 ```
 
+#### Defaults
+```
+$ out/x64.release/d8 --harmony_intl_locale_info
+V8 version 9.1.0 (candidate)
+d8> ar = new Intl.Locale("ar")
+ar
+d8> ar.defaults
+{calendars: ["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"], 
+ collations: ["compat", "emoji", "eor"], 
+ hourCycles: ["h12"],
+ numberingSystems: [... ],
+ timeZones: [... ]}
+d8> ja = new Intl.Locale("ja")
+ja
+d8> ja.defaults
+{calendars: ["gregory", "japanese"], 
+ collations: ["unihan", "emoji", "eor"], 
+ hourCycles: ["h23"],
+ numberingSystems: [... ],
+ timeZones: [... ]}
+d8> enUS = new Intl.Locale("en-US")
+en-US
+d8> enUS.defaults
+{calendars: ["gregory"], 
+ collations: ["emoji", "eor"], 
+ hourCycles: ["h12"],
+ numberingSystems: [... ],
+ timeZones: [... ]}
+d8> zhTW = new Intl.Locale("zh-Hant")
+zh-Hant
+d8> zhTW.defaults
+{calendars: ["gregory", "roc", "chinese"], 
+ collations: ["stroke", "big5han", "gb2312han", "pinyin", "unihan", "zhuyin", "emoji", "eor"], 
+ hourCycles: ["h12"],
+ numberingSystems: [... ],
+ timeZones: [... ]}
+d8> de = new Intl.Locale("de")
+de
+d8> de.defaults
+{calendars: ["gregory"], 
+ collations: ["phonebook", "emoji", "eor"], 
+ hourCycles: ["h23"],
+ numberingSystems: [... ],
+ timeZones: [... ]}
+d8> fa = new Intl.Locale("fa")
+fa
+d8> fa.defaults
+{calendars: ["persian", "gregory", "islamic", "islamic-civil", "islamic-tbla"], 
+ collations: ["emoji", "eor"], 
+ hourCycle: "h23",
+ numberingSystems: [... ],
+ timeZones: [... ]}
+d8> arSA = new Intl.Locale("ar-SA")
+ar-SA
+d8> arSA.defaults
+{calendars: ["islamic-umalqura", "gregory", "islamic", "islamic-rgsa"], 
+ collations: ["compat", "emoji", "eor"], 
+ hourCycles: ["h12"],
+ numberingSystems: [... ],
+ timeZones: [... ]}
+```
 
 #### ~Unit Information~ DROPPED FEATURE
 
