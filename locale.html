@@ -4,6 +4,25 @@
   <emu-clause id="sec-locale-abstracts">
     <h1><ins>Abstract Operations for Locale Objects</ins></h1>
 
+    <emu-clause id="sec-create-array-from-list-and-preferred" aoid=CreateArrayFromListAndPreferred>
+      <h1><ins>CreateArrayFromListAndPreferred ( _list_ , _preferred_ )</ins></h1>
+      <emu-alg>
+        1. <ins>If _preferred_ is *undefined*, then</ins>
+          1. <ins>Return CreateArrayFromList( _list_ ).</ins>
+          1. <ins>Return _array_.</ins>
+        1. <ins>Let _array_ be ! ArrayCreate(0).</ins>
+        1. <ins>Perform ! CreateDataPropertyOrThrow(_array_, ! "0", _preferred_).</ins>
+        1. <ins>[[[ BEGIN OF DISCUSSED CHANGES ]]]</ins>
+        1. <ins>Let _n_ be 1.</ins>
+        1. <ins>For each element _e_ of _list_, do</ins>
+          1. <ins>If _e_ and _preferred_ are not the same String value, then</ins>
+            1. <ins>Perform ! CreateDataPropertyOrThrow(_array_, ! ToString(𝔽(_n_)), _e_).</ins>
+            1. <ins>Set _n_ to _n_ + 1.</ins>
+        1. <ins>[[[ END OF DISCUSSED CHANGES ]]]</ins>
+        1. <ins>Return _array_.</ins>
+      </emu-alg>
+    </emu-clause>
+
     <emu-clause id="sec-calendars-of-locale" aoid=CalendarsOfLocale>
       <h1><ins>CalendarsOfLocale ( _loc_ )</ins></h1>
       <p>
@@ -11,11 +30,11 @@
       </p>
 
       <emu-alg>
+        1. <ins>Let _preferred_ be _loc_.[[Calendar]].</ins>
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _calendarList_ be a List with calendar identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the calenar used for date and time formatting, of the calenar commonly used in the _locale_.</ins>
-        1. <ins>Let _calendars_ be  CreateArrayFromList( _calendarList_ ).</ins>
-        1. <ins>Return _calendars_.</ins>
+        1. <ins>Let _list_ be a List with calendar identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the calenar used for date and time formatting, of the calenar commonly used in the _locale_.</ins>
+        1. <ins>Return CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
       </emu-alg>
     </emu-clause>
 
@@ -26,11 +45,11 @@
       </p>
 
       <emu-alg>
+        1. <ins>Let _preferred_ be _loc_.[[Collation]].</ins>
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _collationList_ be a List with collation identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for string comparison, of the collation commonly used in the _locale_.</ins>
-        1. <ins>Let _collations_ be CreateArrayFromList( _collationList_ ).</ins>
-        1. <ins>Return _collations_.</ins>
+        1. <ins>Let _list_ be a List with collation identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for string comparison, of the collation commonly used in the _locale_.</ins>
+        1. <ins>Return CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
       </emu-alg>
     </emu-clause>
 
@@ -41,11 +60,11 @@
       </p>
 
       <emu-alg>
+        1. <ins>Let _preferred_ be _loc_.[[HourCycle]].</ins>
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _hourCycleList_ be a List with hour cycle identifer, which is a String value indicating whether the 12-hour format ("h11", "h12") or the 24-hour format ("h23", "h24") should be used for date and time formatting, commonly used in the _locale_. </ins>
-        1. <ins>Let _hourCycles_ be CreateArrayFromList( _hourCycleList_ ).</ins>
-        1. <ins>Return _hourCycles_.</ins>
+        1. <ins>Let _list_ be a List with hour cycle identifer, which is a String value indicating whether the 12-hour format ("h11", "h12") or the 24-hour format ("h23", "h24") should be used for date and time formatting, commonly used in the _locale_. </ins>
+        1. <ins>Return CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
       </emu-alg>
     </emu-clause>
 
@@ -56,11 +75,11 @@
       </p>
 
       <emu-alg>
+        1. <ins>Let _preferred_ be _loc_.[[NumberingSystem]].</ins>
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _numberingSystemList_ be a List with numbering system identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the numbering system used for formatting, commonly used in the _locale_.</ins>
-        1. <ins>Let _numberingSystems_ be CreateArrayFromList( _numberingSystemList_ ).</ins>
-        1. <ins>Return _numberingSystems_.</ins>
+        1. <ins>Let _list_ be a List with numbering system identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the numbering system used for formatting, commonly used in the _locale_.</ins>
+        1. <ins>Return CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
       </emu-alg>
     </emu-clause>
 
@@ -74,9 +93,8 @@
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
         1. <ins>Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.</ins>
-        1. <ins>Let _timeZoneList_ be a List with time zone name, which is a Zone or Link name of the IANA Time Zone Database, commonly used in the _region_.</ins>
-        1. <ins>Let _timeZones_ be CreateArrayFromList( _timeZoneList_ ).</ins>
-        1. <ins>Return _timeZones_.</ins>
+        1. <ins>Let _list_ be a List with time zone name, which is a Zone or Link name of the IANA Time Zone Database, commonly used in the _region_.</ins>
+        1. <ins>Return CreateArrayFromList( _list_ ).</ins>
       </emu-alg>
     </emu-clause>
 
