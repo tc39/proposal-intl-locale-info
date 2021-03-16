@@ -1,6 +1,87 @@
 <emu-clause id="locale-objects">
   <h1>Locale Objects</h1>
 
+  <emu-clause id="sec-locale-abstracts">
+    <h1><ins>Abstract Operations for Locale Objects</ins></h1>
+
+    <emu-clause id="sec-calendars-of-locale" aoid=CalendarsOfLocale>
+      <h1><ins>CalendarsOfLocale ( _loc_ )</ins></h1>
+      <p>
+        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+      </p>
+
+      <emu-alg>
+        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
+        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
+        1. <ins>Let _calendarList_ be a List with calendar identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the calenar used for date and time formatting, of the calenar commonly used in the _locale_.</ins>
+        1. <ins>Let _calendars_ be  CreateArrayFromList( _calendarList_ ).</ins>
+        1. <ins>Return _calendars_.</ins>
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-collations-of-locale" aoid=CollationsOfLocale>
+      <h1><ins>CollationsOfLocale ( _loc_ )</ins></h1>
+      <p>
+        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+      </p>
+
+      <emu-alg>
+        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
+        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
+        1. <ins>Let _collationList_ be a List with collation identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for string comparison, of the collation commonly used in the _locale_.</ins>
+        1. <ins>Let _collations_ be CreateArrayFromList( _collationList_ ).</ins>
+        1. <ins>Return _collations_.</ins>
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-hour-cycles-of-locale" aoid=HourCyclesOfLocale>
+      <h1><ins>HourCyclesOfLocale ( _loc_ )</ins></h1>
+      <p>
+        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+      </p>
+
+      <emu-alg>
+        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
+        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
+        1. <ins>Let _hourCycleList_ be a List with hour cycle identifer, which is a String value indicating whether the 12-hour format ("h11", "h12") or the 24-hour format ("h23", "h24") should be used for date and time formatting, commonly used in the _locale_. </ins>
+        1. <ins>Let _hourCycles_ be CreateArrayFromList( _hourCycleList_ ).</ins>
+        1. <ins>Return _hourCycles_.</ins>
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-numbering-systems-of-locale" aoid=NumberingSystemsOfLocale>
+      <h1><ins>NumberingSystemsOfLocale ( _loc_ )</ins></h1>
+      <p>
+        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+      </p>
+
+      <emu-alg>
+        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
+        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
+        1. <ins>Let _numberingSystemList_ be a List with numbering system identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the numbering system used for formatting, commonly used in the _locale_.</ins>
+        1. <ins>Let _numberingSystems_ be CreateArrayFromList( _numberingSystemList_ ).</ins>
+        1. <ins>Return _numberingSystems_.</ins>
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-time-zones-of-locale" aoid=TimeZonesOfLocale>
+      <h1><ins>TimeZonesOfLocale ( _loc_ )</ins></h1>
+      <p>
+        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+      </p>
+
+      <emu-alg>
+        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
+        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
+        1. <ins>Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.</ins>
+        1. <ins>Let _timeZoneList_ be a List with time zone name, which is a Zone or Link name of the IANA Time Zone Database, commonly used in the _region_.</ins>
+        1. <ins>Let _timeZones_ be CreateArrayFromList( _timeZoneList_ ).</ins>
+        1. <ins>Return _timeZones_.</ins>
+      </emu-alg>
+    </emu-clause>
+
+  </emu-clause>
+
   <emu-clause id="sec-intl-locale-constructor">
     <h1>The Intl.Locale Constructor</h1>
 
@@ -361,25 +442,17 @@
       <emu-alg>
         1. <ins>Let _loc_ be the *this* value.</ins>
         1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
         1. <ins>Let _info_ be ! ObjectCreate(%Object.prototype%).</ins>
-        1. <ins>Let _calendarList_ be a List with calendar identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the calenar used for date and time formatting, of the calenar commonly used in the _locale_.</ins>
-        1. <ins>Let _calendars_ be  CreateArrayFromList( _calendarList_ ).</ins>
+        1. <ins>Let _calenars_ be CalendarsOfLocale(_locale_).</ins>
         1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"calendars"*, _calendars_).</ins>
-        1. <ins>Let _collationList_ be a List with collation identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for string comparison, of the collation commonly used in the _locale_.</ins>
-        1. <ins>Let _collations_ be CreateArrayFromList( _collationList_ ).</ins>
+        1. <ins>Let _collations_ be CollationsOfLocale(_locale_).</ins>
         1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"collations"*, _collations_).</ins>
-        1. <ins>Let _hourCycleList_ be a List with hour cycle identifer, which is a String value indicating whether the 12-hour format ("h11", "h12") or the 24-hour format ("h23", "h24") should be used for date and time formatting, commonly used in the _locale_. </ins>
-        1. <ins>Let _hourCycles_ be CreateArrayFromList( _hourCycleList_ ).</ins>
+        1. <ins>Let _hourCycles_ be HourCyclesOfLocale(_locale_).</ins>
         1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"hourCycles"*, _hourCycles_).</ins>
-        1. <ins>Let _numberingSystemList_ be a List with numbering system identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the numbering system used for formatting, commonly used in the _locale_.</ins>
-        1. <ins>Let _numberingSystems_ be CreateArrayFromList( _numberingSystemList_ ).</ins>
+        1. <ins>Let _numberingSystems be NumberingSystemsOfLocale(_locale_).</ins>
         1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"numberingSystems"*, _numberingSystems_).</ins>
         1. <ins>If the `unicode_language_id` production of _locale_ does not contain the `["-" unicode_region_subtag]` sequence, return _info_.</ins>
-        1. <ins>Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.</ins>
-        1. <ins>Let _timeZoneList_ be a List with time zone name, which is a Zone or Link name of the IANA Time Zone Database, commonly used in the _region_.</ins>
-        1. <ins>Let _timeZones_ be CreateArrayFromList( _timeZoneList_ ).</ins>
+        1. <ins>Let _timeZones_ be TimeZonesOfLocale(_locale_).</ins>
         1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"timeZones"*, _timeZones_).</ins>
         1. <ins>Return _info_.</ins>
       </emu-alg>
