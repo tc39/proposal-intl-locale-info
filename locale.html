@@ -12,13 +12,6 @@
           1. <ins>Return _array_.</ins>
         1. <ins>Let _array_ be ! ArrayCreate(0).</ins>
         1. <ins>Perform ! CreateDataPropertyOrThrow(_array_, ! "0", _preferred_).</ins>
-        1. <span style="color:red">[[[ BEGIN OF DISCUSSED CHANGES ]]]</span>
-        1. <ins>Let _n_ be 1.</ins>
-        1. <ins>For each element _e_ of _list_, do</ins>
-          1. <ins>If _e_ and _preferred_ are not the same String value, then</ins>
-            1. <ins>Perform ! CreateDataPropertyOrThrow(_array_, ! ToString(𝔽(_n_)), _e_).</ins>
-            1. <ins>Set _n_ to _n_ + 1.</ins>
-        1. <span style="color:red">[[[ END OF DISCUSSED CHANGES ]]]</span>
         1. <ins>Return _array_.</ins>
       </emu-alg>
     </emu-clause>
@@ -452,31 +445,6 @@
       </emu-alg>
     </emu-clause>
 
-    <h1 style="color: red">[[[ BEGIN OF APPROACH 1]]]</h1>
-    <emu-clause id="sec-Intl.Locale.prototype.defaults">
-      <h1><ins>get Intl.Locale.prototype.defaults</ins></h1>
-      <p><ins>`Intl.Locale.prototype.defaults` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.  Its get accessor function performs the following steps:</ins></p>
-      <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Let _info_ be ! ObjectCreate(%Object.prototype%).</ins>
-        1. <ins>Let _calenars_ be CalendarsOfLocale(_locale_).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"calendars"*, _calendars_).</ins>
-        1. <ins>Let _collations_ be CollationsOfLocale(_locale_).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"collations"*, _collations_).</ins>
-        1. <ins>Let _hourCycles_ be HourCyclesOfLocale(_locale_).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"hourCycles"*, _hourCycles_).</ins>
-        1. <ins>Let _numberingSystems be NumberingSystemsOfLocale(_locale_).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"numberingSystems"*, _numberingSystems_).</ins>
-        1. <ins>If the `unicode_language_id` production of _locale_ does not contain the `["-" unicode_region_subtag]` sequence, return _info_.</ins>
-        1. <ins>Let _timeZones_ be TimeZonesOfLocale(_locale_).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"timeZones"*, _timeZones_).</ins>
-        1. <ins>Return _info_.</ins>
-      </emu-alg>
-    </emu-clause>
-    <h1 style="color: red">[[[ END OF APPROACH 1]]]</h1>
-
-    <h1 style="color: red">[[[ BEGIN OF APPROACH 2]]]</h1>
     <emu-clause id="sec-Intl.Locale.prototype.calendars">
       <h1><ins>get Intl.Locale.prototype.calendars</ins></h1>
       <p><ins>`Intl.Locale.prototype.calendars` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</ins></p>
@@ -527,7 +495,6 @@
         1. <ins>Return TimeZonesOfLocale(_locale_).</ins>
       </emu-alg>
     </emu-clause>
-    <h1 style="color: red">[[[ END OF APPROACH 2]]]</h1>
 
     <emu-clause id="sec-Intl.Locale.prototype.textInfo">
       <h1><ins>get Intl.Locale.prototype.textInfo</ins></h1>
