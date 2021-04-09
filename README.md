@@ -116,11 +116,14 @@ ar
 d8> ar.calendars
 ["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"]
 d8> ar.collations
-collations: ["compat", "emoji", "eor"]
+["compat", "emoji", "eor"]
 d8> ar.hourCycles
 ["h12"]
 d8> ar.numberingSystems
 ["latn"]
+d8> ar.timeZones
+undefined
+
 d8> arEG = new Intl.Locale("ar-EG")
 ar-EG
 d8> arEG.calendars
@@ -132,7 +135,7 @@ d8> arEG.hourCycles
 d8> arEG.numberingSystems
 ["arab"]
 d8> arEG.timeZones
-timeZones: ["Africa/Cairo"]
+["Africa/Cairo"]
 
 d8> arSA = new Intl.Locale("ar-SA")
 ar-SA
@@ -146,6 +149,7 @@ d8> arSA.numberingSystems
 ["arab"]
 d8> arSA.timeZones
 timeZones: ["Asia/Riyadh"]
+
 d8> ja = new Intl.Locale("ja")
 ja
 d8> ja.calendars
@@ -157,7 +161,8 @@ d8> ja.hourCycles
 d8> ja.numberingSystems
 ["latn"]
 d8> ja.timeZones
-null
+undefined
+
 d8> jaJP = new Intl.Locale("ja-JP")
 ja-JP
 d8> jaJP.calendars
@@ -171,32 +176,83 @@ d8> jaJP.numberingSystems
 d8> jaJP.timeZones
 ["Asia/Tokyo"]}
 
-// to be changed later....
 d8> enUS = new Intl.Locale("en-US")
 en-US
-d8> enUS.defaults
-{calendars: ["gregory"], collations: ["emoji", "eor"], hourCycles: ["h12"], numberingSystems: ["latn"], timeZones: ["America/Adak", "America/Anchorage", "America/Boise", "America/Chicago", "America/Denver", "America/Detroit", "America/Indiana/Knox", "America/Indiana/Marengo", "America/Indiana/Petersburg", "America/Indiana/Tell_City", "America/Indiana/Vevay", "America/Indiana/Vincennes", "America/Indiana/Winamac", "America/Indianapolis", "America/Juneau", "America/Kentucky/Monticello", "America/Los_Angeles", "America/Louisville", "America/Menominee", "America/Metlakatla", "America/New_York", "America/Nome", "America/North_Dakota/Beulah", "America/North_Dakota/Center", "America/North_Dakota/New_Salem", "America/Phoenix", "America/Sitka", "America/Yakutat", "Pacific/Honolulu"]}
+d8> enUS.calendars
+["gregory"]
+d8> enUS.collations
+["emoji", "eor"]
+d8> enUS.hourCycles
+["h12"]
+d8> enUS.numberingSystems
+["latn"]
+d8> enUS.timeZones
+["America/Adak", "America/Anchorage", "America/Boise", "America/Chicago", "America/Denver", "America/Detroit", "America/Indiana/Knox", "America/Indiana/Marengo", "America/Indiana/Petersburg", "America/Indiana/Tell_City", "America/Indiana/Vevay", "America/Indiana/Vincennes", "America/Indiana/Winamac", "America/Indianapolis", "America/Juneau", "America/Kentucky/Monticello", "America/Los_Angeles", "America/Louisville", "America/Menominee", "America/Metlakatla", "America/New_York", "America/Nome", "America/North_Dakota/Beulah", "America/North_Dakota/Center", "America/North_Dakota/New_Salem", "America/Phoenix", "America/Sitka", "America/Yakutat", "Pacific/Honolulu"]
+
 d8> enNZ = new Intl.Locale("en-NZ")
 en-NZ
-d8> enNZ.defaults
-{calendars: ["gregory"], collations: ["emoji", "eor"], hourCycles: ["h12"], numberingSystems: ["latn"], timeZones: ["Pacific/Auckland", "Pacific/Chatham"]}
+d8> enNZ.calendars
+["gregory"]
+d8> enNZ.collations
+["emoji", "eor"]
+d8> enNZ.hourCycles
+["h12"]
+d8> enNZ.numberingSystems
+["latn"]
+d8> enNZ.timeZones
+["Pacific/Auckland", "Pacific/Chatham"]
+
 d8> zh = new Intl.Locale("zh")
 zh
-d8> zh.defaults
-{calendars: ["gregory", "chinese"], collations: ["pinyin", "big5han", "gb2312han", "stroke", "unihan", "zhuyin", "emoji", "eor"], hourCycles: ["h12"], numberingSystems: ["latn"]}
+d8> zh.calendars
+["gregory", "chinese"]
+d8> zh.collations
+["pinyin", "big5han", "gb2312han", "stroke", "unihan", "zhuyin", "emoji", "eor"]
+d8> zh.hourCycles
+["h12"]
+d8> zh.numberingSystems
+["latn"]
+d8> zh.timeZones
+undefined
+
 d8> zhTW = new Intl.Locale("zh-TW")      
 zh-TW
-d8>  zhTW.defaults
-{calendars: ["gregory", "roc", "chinese"], collations: ["stroke", "big5han", "gb2312han", "pinyin", "unihan", "zhuyin", "emoji", "eor"], hourCycles: ["h12"], numberingSystems: ["latn"], timeZones: ["Asia/Taipei"]}
+d8>  zhTW.calendars
+["gregory", "roc", "chinese"]
+d8>  zhTW.collations
+["stroke", "big5han", "gb2312han", "pinyin", "unihan", "zhuyin", "emoji", "eor"]
+d8>  zhTW.hourCycles
+["h12"]
+d8>  zhTW.numberingSystems
+["latn"]
+d8>  zhTW.timeZones
+["Asia/Taipei"]
+
 d8> zhHK = new Intl.Locale("zh-HK")
 zh-HK
-d8> zhHK.defaults
-{calendars: ["gregory", "chinese"], collations: ["stroke", "big5han", "gb2312han", "pinyin", "unihan", "zhuyin", "emoji", "eor"], hourCycles: ["h12"], numberingSystems: ["latn"], timeZones: ["Asia/Hong_Kong"]}
+d8> zhHK.calendars
+["gregory", "chinese"]
+d8> zhHK.collations
+["stroke", "big5han", "gb2312han", "pinyin", "unihan", "zhuyin", "emoji", "eor"]
+d8> zhHK.hourCycles
+["h12"]
+d8> zhHK.numberingSystems
+["latn"]
+d8> zhHK.timeZones
+["Asia/Hong_Kong"]
+
 d8> fa = new Intl.Locale("fa")
 fa
-d8> fa.defaults
-{calendars: ["persian", "gregory", "islamic", "islamic-civil", "islamic-tbla"], collations: ["emoji", "eor"], hourCycles: ["h23"], numberingSystems: ["arabext"]}
-d8> 
+d8> fa.calendars
+["persian", "gregory", "islamic", "islamic-civil", "islamic-tbla"]
+d8> fa.collations
+["emoji", "eor"]
+d8> fa.hourCycles
+["h23"]
+d8> fa.numberingSystems
+["arabext"]
+d8> fa.timeZones
+undefined 
 
 ```
 
