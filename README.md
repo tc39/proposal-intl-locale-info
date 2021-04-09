@@ -113,25 +113,65 @@ l.textInfo.direction
 V8 version 9.1.0 (candidate)
 d8> ar = new Intl.Locale("ar")
 ar
-d8> ar.defaults
-{calendars: ["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"], collations: ["compat", "emoji", "eor"], hourCycles: ["h12"], numberingSystems: ["latn"]}
+d8> ar.calendars
+["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"]
+d8> ar.collations
+collations: ["compat", "emoji", "eor"]
+d8> ar.hourCycles
+["h12"]
+d8> ar.numberingSystems
+["latn"]
 d8> arEG = new Intl.Locale("ar-EG")
 ar-EG
-d8> arEG.defaults
-{calendars: ["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"], collations: ["compat", "emoji", "eor"], hourCycles: ["h12"], numberingSystems: ["arab"], timeZones: ["Africa/Cairo"]}
+d8> arEG.calendars
+["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"]
+d8> arEG.collations
+["compat", "emoji", "eor"]
+d8> arEG.hourCycles
+["h12"]
+d8> arEG.numberingSystems
+["arab"]
+d8> arEG.timeZones
+timeZones: ["Africa/Cairo"]
 
 d8> arSA = new Intl.Locale("ar-SA")
 ar-SA
-d8> arSA.defaults
-{calendars: ["islamic-umalqura", "gregory", "islamic", "islamic-rgsa"], collations: ["compat", "emoji", "eor"], hourCycles: ["h12"], numberingSystems: ["arab"], timeZones: ["Asia/Riyadh"]}
+d8> arSA.calendars
+["islamic-umalqura", "gregory", "islamic", "islamic-rgsa"]
+d8> arSA.collations
+["compat", "emoji", "eor"]
+d8> arSA.hourCycles
+["h12"]
+d8> arSA.numberingSystems
+["arab"]
+d8> arSA.timeZones
+timeZones: ["Asia/Riyadh"]
 d8> ja = new Intl.Locale("ja")
 ja
-d8> ja.defaults
-{calendars: ["gregory", "japanese"], collations: ["unihan", "emoji", "eor"], hourCycles: ["h23"], numberingSystems: ["latn"]}
+d8> ja.calendars
+["gregory", "japanese"]
+d8> ja.collations
+["unihan", "emoji", "eor"]
+d8> ja.hourCycles
+["h23"]
+d8> ja.numberingSystems
+["latn"]
+d8> ja.timeZones
+null
 d8> jaJP = new Intl.Locale("ja-JP")
 ja-JP
-d8> jaJP.defaults
-{calendars: ["gregory", "japanese"], collations: ["unihan", "emoji", "eor"], hourCycles: ["h23"], numberingSystems: ["latn"], timeZones: ["Asia/Tokyo"]}
+d8> jaJP.calendars
+["gregory", "japanese"]
+d8> jaJP.collations
+["unihan", "emoji", "eor"]
+d8> jaJP.hourCycles
+["h23"]
+d8> jaJP.numberingSystems
+["latn"]
+d8> jaJP.timeZones
+["Asia/Tokyo"]}
+
+// to be changed later....
 d8> enUS = new Intl.Locale("en-US")
 en-US
 d8> enUS.defaults
