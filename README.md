@@ -7,7 +7,7 @@ Stage 2
 
 * Advanced to [Stage 1](https://docs.google.com/presentation/d/1NwYFb6jm5aQOiL9urMM-GaEFMhll5sYcZJYQ1WZhTZ8/edit#slide=id.p) in TC39 2020-09 meeting.
 * Advanced to [Stage 2](https://docs.google.com/presentation/d/1ct7h9pLHmXCwojGlReNjAT9RgysqLk_3lyUcllnOQYs/) in [TC39 2021-01-25~28 meeting](https://github.com/tc39/agendas/blob/master/2021/01.md).
-  * Jan 2021 TC39 meeting approve to move to Stage 2 **WITH the condiction to drop unitInfo**
+  * Jan 2021 TC39 meeting approve to move to Stage 2 **WITH the condition to drop unitInfo**
 * 2021-04-08 ECMA402 meeting, we agreed to propose to TC39 for Stage 3.
 * Plan to propose to [advance to Stage 3](https://docs.google.com/presentation/d/1h-iaDM5RiD5rpb0aYr1GMRLRRBh72zVEKtMyMJkCkfE/edit#slide=id.g98718d9573_0_37) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
 
@@ -59,7 +59,7 @@ A proposal to expose Locale information, such as week data (first day in a week,
       * [Calendar::getFirstDayOfWeek](https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1Calendar.html#aa95d4e17ea169d0388a3a18489e67da0)
       * [Calendar::getMinimalDaysInFirstWeek](https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1Calendar.html#af10922ea91e4e4ccef6624ac3f18e621)
       * [Calendar::getDayOfWeekType](https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1Calendar.html#adc18b432f868737e115ece5f6e3c95ab)
-* ~Hour Cycle~ DRIPPED by Champion
+* ~Hour Cycle~ DROPPED by Champion
 * Direction (User request: https://github.com/tc39/ecma402/issues/205 )
   * Prior Arts: 
     * [mozIntl.getLocaleInfo(locales, options)](https://firefox-source-docs.mozilla.org/intl/dataintl.html#mozintl-getlocaleinfo-locales-options)
