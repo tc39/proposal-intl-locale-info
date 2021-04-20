@@ -5,7 +5,7 @@
 <script src="./spec.js"></script>
 <pre class="metadata">
 title: Intl Locale Info Proposal
-stage: 2
+stage: 3
 location: https://tc39.github.io/proposal-intl-locale-info/
 copyright: true
 contributors: Google, Ecma International
