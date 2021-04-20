@@ -9,7 +9,7 @@ Stage 2
 * Advanced to [Stage 2](https://docs.google.com/presentation/d/1ct7h9pLHmXCwojGlReNjAT9RgysqLk_3lyUcllnOQYs/) in [TC39 2021-01-25~28 meeting](https://github.com/tc39/agendas/blob/master/2021/01.md).
   * Jan 2021 TC39 meeting approve to move to Stage 2 **WITH the condition to drop unitInfo**
 * 2021-04-08 ECMA402 meeting, we agreed to propose to TC39 for Stage 3.
-* Plan to propose to [advance to Stage 3](https://docs.google.com/presentation/d/1h-iaDM5RiD5rpb0aYr1GMRLRRBh72zVEKtMyMJkCkfE/edit#slide=id.g98718d9573_0_37) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
+* Advanced to [advance to Stage 3](https://docs.google.com/presentation/d/1h-iaDM5RiD5rpb0aYr1GMRLRRBh72zVEKtMyMJkCkfE/edit#slide=id.g98718d9573_0_37) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
 
 ### Entrance Criteria for Stage 1 (Proposal)
 * Identified “champion” who will advance the addition: **Frank Yung-Fong Tang**
