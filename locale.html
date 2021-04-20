@@ -10,7 +10,7 @@
         1. <ins>If _preferred_ is *undefined*, then</ins>
           1. <ins>Return CreateArrayFromList( _list_ ).</ins>
         1. <ins>Let _array_ be ! ArrayCreate(0).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_array_, ! "0", _preferred_).</ins>
+        1. <ins>Perform ! CreateDataPropertyOrThrow(_array_, "0", _preferred_).</ins>
         1. <ins>Return _array_.</ins>
       </emu-alg>
     </emu-clause>
@@ -25,7 +25,7 @@
         1. <ins>Let _preferred_ be _loc_.[[Calendar]].</ins>
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _list_ be a List with calendar identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the calenar used for date and time formatting, of the calenar commonly used in the _locale_.</ins>
+        1. <ins>Let _list_ be a List of 1 or more calendar identifiers, which must be String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use in the _locale_ for date and time formatting.</ins>
         1. <ins>Return CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
       </emu-alg>
     </emu-clause>
@@ -40,7 +40,7 @@
         1. <ins>Let _preferred_ be _loc_.[[Collation]].</ins>
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _list_ be a List with collation identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for string comparison, of the collation commonly used in the _locale_.</ins>
+        1. <ins>Let _list_ be a List of 1 or more collation identifiers, which must be String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use in the _locale_ for string comparison.</ins>
         1. <ins>Return CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
       </emu-alg>
     </emu-clause>
@@ -55,7 +55,7 @@
         1. <ins>Let _preferred_ be _loc_.[[HourCycle]].</ins>
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _list_ be a List with hour cycle identifer, which is a String value indicating whether the 12-hour format ("h11", "h12") or the 24-hour format ("h23", "h24") should be used for date and time formatting, commonly used in the _locale_. </ins>
+        1. <ins>Let _list_ be a List of 1 or more hour cycle identifiers, which must be String values indicating either the 12-hour format (*"h11"*, *"h12"*) or the 24-hour format (*"h23"*, *"h24"*), sorted in descending preference of those in common use in the locale for date and time formatting.</ins>
         1. <ins>Return CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
       </emu-alg>
     </emu-clause>
@@ -70,7 +70,7 @@
         1. <ins>Let _preferred_ be _loc_.[[NumberingSystem]].</ins>
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _list_ be a List with numbering system identifier, which is a String value with the "type" given in Unicode Technical Standard 35 for the numbering system used for formatting, commonly used in the _locale_.</ins>
+        1. <ins>Let _list_ be a List of 1 or more numbering system identifiers, which must be String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use in the _locale_ for formatting numeric values.</ins>
         1. <ins>Return CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
       </emu-alg>
     </emu-clause>
@@ -85,7 +85,7 @@
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
         1. <ins>Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.</ins>
-        1. <ins>Let _list_ be a List with time zone name, which is a Zone or Link name of the IANA Time Zone Database, commonly used in the _region_.</ins>
+        1. <ins>Let _list_ be a List of 1 or more time zone identifiers, which must be String values indicating a Zone or Link name of the IANA Time Zone Database, sorted in descending preference of those in common use in _region_.</ins>
         1. <ins>Return CreateArrayFromList( _list_ ).</ins>
       </emu-alg>
     </emu-clause>
@@ -450,7 +450,7 @@
       <emu-alg>
         1. <ins>Let _loc_ be the *this* value.</ins>
         1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Return CalendarsOfLocale(_locale_).</ins>
+        1. <ins>Return CalendarsOfLocale(_loc_).</ins>
       </emu-alg>
     </emu-clause>
 
@@ -460,7 +460,7 @@
       <emu-alg>
         1. <ins>Let _loc_ be the *this* value.</ins>
         1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Return CollationsOfLocale(_locale_).</ins>
+        1. <ins>Return CollationsOfLocale(_loc_).</ins>
       </emu-alg>
     </emu-clause>
 
@@ -470,7 +470,7 @@
       <emu-alg>
         1. <ins>Let _loc_ be the *this* value.</ins>
         1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Return HourCyclesOfLocale(_locale_).</ins>
+        1. <ins>Return HourCyclesOfLocale(_loc_).</ins>
       </emu-alg>
     </emu-clause>
 
@@ -480,7 +480,7 @@
       <emu-alg>
         1. <ins>Let _loc_ be the *this* value.</ins>
         1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Return NumberingSystemsOfLocale(_locale_).</ins>
+        1. <ins>Return NumberingSystemsOfLocale(_loc_).</ins>
       </emu-alg>
     </emu-clause>
 
@@ -490,8 +490,9 @@
       <emu-alg>
         1. <ins>Let _loc_ be the *this* value.</ins>
         1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
+        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>If the `unicode_language_id` production of _locale_ does not contain the `["-" unicode_region_subtag]` sequence, return *undefined*.</ins>
-        1. <ins>Return TimeZonesOfLocale(_locale_).</ins>
+        1. <ins>Return TimeZonesOfLocale(_loc_).</ins>
       </emu-alg>
     </emu-clause>
 
