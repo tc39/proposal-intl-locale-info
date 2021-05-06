@@ -43,6 +43,15 @@ Stage 3
 ## ECMAScript editors
 * Richard Gibson @gibson042 
 
+## Implementation Status
+
+* V8 (**UPDATE 2021-5-6:**) : Behind a flag ([cl/2570218](https://chromium-review.googlesource.com/c/v8/v8/+/2570218) is landed into the trunk) 
+  * $ out/x64.release/d8 --harmony_intl_locale_info
+  * Chrome - [TBD](https://www.chromestatus.com/feature/5566859262820352)
+  * Edge - ???
+* FireFox - ???
+* Safari - ???
+
 ## Scope
 
 A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimun day in the first week), and text direction hour cycle used in the locale ~,measurement system used in the locale~.
@@ -79,9 +88,6 @@ Locale Information is necessary for many low level operations.
 
 ## High Level Design
 
-v8 prototype of Option A in https://chromium-review.googlesource.com/c/v8/v8/+/2570218
-
-$ out/x64.release/d8 --harmony_intl_locale_info
 
 Add methods to Intl to get object to contains group of information:
 #### Week Data
