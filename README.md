@@ -19,7 +19,7 @@ Stage 3
 * Discussion of key algorithms, abstractions and semantics
 * Identification of potential “cross-cutting” concerns and implementation challenges/complexity
 * A publicly available repository for the proposal that captures the above requirements:
-* 
+
 ### Entrance Criteria for Stage 2 (Draft)
 * Above
 * Initial spec text: DONE
@@ -54,7 +54,7 @@ Stage 3
 
 ## Scope
 
-A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimun day in the first week), and text direction hour cycle used in the locale ~,measurement system used in the locale~.
+A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimum day in the first week), and text direction hour cycle used in the locale ~,measurement system used in the locale~.
 
 * Week Data: (User request: https://github.com/tc39/ecma402/issues/6 )
   * Prior Arts: 
