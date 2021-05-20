@@ -90,6 +90,55 @@
       </emu-alg>
     </emu-clause>
 
+    <emu-clause id="sec-direction-of-locale" aoid=DirectionOfLocale>
+      <h1><ins>DirectionOfLocale ( _loc_ )</ins></h1>
+
+      <emu-alg>
+        1. <ins>If the default general ordering of characters (characterOrder) within a line in the _loc_ is right-to-left, then return *"rtl"*.</ins>
+        1. <ins>Return *"ltr"*.</ins>
+      </emu-alg>
+
+    </emu-clause>
+
+    <emu-clause id="sec-week-info-of-locale" aoid=WeekInfoOfLocale>
+      <h1><ins>WeekInfoOfLocale ( _loc_ )</ins></h1>
+
+      <emu-alg>
+        1. <ins>Return a record with fields base on _loc_ according to <emu-xref href="#table-locale-weekinfo-record"></emu-xref></ins>
+      </emu-alg>
+
+      <emu-table id="table-locale-weekinfo-record">
+        <emu-caption><ins>Record returned by WeekInfoOfLocale</ins></emu-caption>
+        <table class="real-table">
+          <thead>
+            <tr>
+              <th><ins>Field</ins></th>
+              <th><ins>Value<ins></th>
+            </tr>
+          </thead>
+          <tr>
+            <td><ins>[[FirstDay]]</ins></td>
+            <td><ins>The weekday value indicating which day of the week is considered the 'first' day, for calendar purposes, in  _loc_.</ins></td>
+          </tr>
+          <tr>
+            <td><ins>[[WeekendStart]]</ins></td>
+            <td><ins>The weekday value indicating which day of the week is considered the starting day of the 'weekend', for calendar purposes, in _loc_.</ins></td>
+          </tr>
+          <tr>
+            <td><ins>[[WeekendEnd]]</ins></td>
+            <td><ins>The weekday value indicating which day of the week is considered the ending day of the 'weekend', for calendar purposes, in _loc_.</ins></td>
+          </tr>
+          <tr>
+            <td><ins>[[MinimalDays]]</ins></td>
+            <td><ins>The minimal days required in the first week of a month or year, for calendar purposes, in _loc_.</ins></td>
+          </tr>
+        </table>
+      </emu-table>
+
+      <p><ins>A weekday value of 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</ins></p>
+
+    </emu-clause>
+
   </emu-clause>
 
   <emu-clause id="sec-intl-locale-constructor">
@@ -505,9 +554,7 @@
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
         1. <ins>Let _info_ be ! ObjectCreate(%Object.prototype%).</ins>
-        1. <ins>Let _dir_ be *"ltr"*.
-        1. <ins>If the default general ordering of characters (characterOrder) within a line in the _locale_ is right-to-left, then
-          1. <ins>Let _dir_ be *"rtl"*.</ins>
+        1. <ins>Let _dir_ be DirectionOfLocale(_locale_)
         1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"direction"*, _dir_).</ins>
         1. <ins>Return _info_.</ins>
       </emu-alg>
@@ -522,18 +569,13 @@
         1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
         1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
         1. <ins>Let _info_ be ! ObjectCreate(%Object.prototype%).</ins>
-        1. <ins>Let _fd_ be the weekday value indicating which day of the week is considered the 'first' day, for calendar purposes, in the _locale_.</ins>
-        1. <ins>Let _ws_ be the weekday value indicating which day of the week is considered the starting day of the 'weekend', for calendar purposes, in the _locale_.</ins>
-        1. <ins>Let _we_ be the weekday value indicating which day of the week is considered the ending day of the 'weekend', for calendar purposes, in the _locale_.</ins>
-        1. <ins>Let _md_ be the minimal days required in the first week of a month or year, for calendar purposes, in the _locale_. </ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"firstDay"*, _fd_).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"weekendStart"*, _ws_).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"weekendEnd"*, _we_).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"minimalDays"*, _md_).</ins>
+        1. <ins>Let _wi_ be WeekInfoOfLocale(_locale_)</ins>
+        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"firstDay"*, _wi_.[[FirstDay]]).</ins>
+        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"weekendStart"*, _wi_.[[WeekendStart]]).</ins>
+        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"weekendEnd"*, _wi_.[[WeekendEnd]]).</ins>
+        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"minimalDays"*, _wi_.[[MinimalDays]]).</ins>
         1. <ins>Return _info_.</ins>
       </emu-alg>
-
-      <p><ins>A weekday value of 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</ins></p>
 
     </emu-clause>
 
