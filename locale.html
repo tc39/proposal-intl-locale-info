@@ -90,57 +90,59 @@
       </emu-alg>
     </emu-clause>
 
+    <ins class="block">
     <emu-clause id="sec-character-direction-of-locale" aoid=CharacterDirectionOfLocale>
-      <h1><ins>CharacterDirectionOfLocale ( _locale_ )</ins></h1>
+      <h1>CharacterDirectionOfLocale ( _locale_ )</h1>
 
       <emu-alg>
-        1. <ins>If the default general ordering of characters (characterOrder) within a line in _locale_ is right-to-left, return *"rtl"*.</ins>
-        1. <ins>Return *"ltr"*.</ins>
+        1. If the default general ordering of characters (characterOrder) within a line in _locale_ is right-to-left, return *"rtl"*.
+        1. Return *"ltr"*.
       </emu-alg>
 
     </emu-clause>
 
     <emu-clause id="sec-week-info-of-locale" aoid=WeekInfoOfLocale>
-      <h1><ins>WeekInfoOfLocale ( _locale_ )</ins></h1>
+      <h1>WeekInfoOfLocale ( _locale_ )</h1>
 
       <emu-alg>
-        1. <ins>Return a record whose fields are defined by <emu-xref href="#table-locale-weekinfo-record"></emu-xref>, with values based on _locale_.</ins>
+        1. Return a record whose fields are defined by <emu-xref href="#table-locale-weekinfo-record"></emu-xref>, with values based on _locale_.
       </emu-alg>
 
       <emu-table id="table-locale-weekinfo-record">
-        <emu-caption><ins>WeekInfo Record Fields</ins></emu-caption>
+        <emu-caption>WeekInfo Record Fields</emu-caption>
         <table class="real-table">
           <thead>
             <tr>
-              <th><ins>Field Name</ins></th>
-              <th><ins>Value<ins></th>
-              <th><ins>Meaning<ins></th>
+              <th>Field Name</th>
+              <th>Value</th>
+              <th>Meaning</th>
             </tr>
           </thead>
           <tr>
-            <td><ins>[[FirstDay]]</ins></td>
-            <td><ins>Integer value between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</ins></td>
-            <td><ins>The weekday value indicating which day of the week is considered the 'first' day, for calendar purposes.</ins></td>
+            <td>[[FirstDay]]</td>
+            <td>Integer value between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</td>
+            <td>The weekday value indicating which day of the week is considered the 'first' day, for calendar purposes.</td>
           </tr>
           <tr>
-            <td><ins>[[WeekendStart]]</ins></td>
-            <td><ins>Integer value between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</ins></td>
-            <td><ins>The weekday value indicating which day of the week is considered the starting day of the 'weekend', for calendar purposes.</ins></td>
+            <td>[[WeekendStart]]</td>
+            <td>Integer value between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</td>
+            <td>The weekday value indicating which day of the week is considered the starting day of the 'weekend', for calendar purposes.</td>
           </tr>
           <tr>
-            <td><ins>[[WeekendEnd]]</ins></td>
-            <td><ins>Integer value between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</ins></td>
-            <td><ins>The weekday value indicating which day of the week is considered the ending day of the 'weekend', for calendar purposes.</ins></td>
+            <td>[[WeekendEnd]]</td>
+            <td>Integer value between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</td>
+            <td>The weekday value indicating which day of the week is considered the ending day of the 'weekend', for calendar purposes.</td>
           </tr>
           <tr>
-            <td><ins>[[MinimalDays]]</ins></td>
-            <td><ins>Integer value between 1 and 7.</ins></td>
-            <td><ins>The minimal days required in the first week of a month or year, for calendar purposes.</ins></td>
+            <td>[[MinimalDays]]</td>
+            <td>Integer value between 1 and 7.</td>
+            <td>The minimal days required in the first week of a month or year, for calendar purposes.</td>
           </tr>
         </table>
       </emu-table>
 
     </emu-clause>
+    </ins>
 
   </emu-clause>
 
