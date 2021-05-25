@@ -1,96 +1,96 @@
 <emu-clause id="locale-objects">
   <h1>Locale Objects</h1>
 
+  <ins class="block">
   <emu-clause id="sec-locale-abstracts">
-    <h1><ins>Abstract Operations for Locale Objects</ins></h1>
+    <h1>Abstract Operations for Locale Objects</h1>
 
     <emu-clause id="sec-create-array-from-list-and-preferred" aoid=CreateArrayFromListAndPreferred>
-      <h1><ins>CreateArrayFromListAndPreferred ( _list_ , _preferred_ )</ins></h1>
+      <h1>CreateArrayFromListAndPreferred ( _list_ , _preferred_ )</h1>
       <emu-alg>
-        1. <ins>If _preferred_ is *undefined*, then</ins>
-          1. <ins>Return CreateArrayFromList( _list_ ).</ins>
-        1. <ins>Let _array_ be ! ArrayCreate(0).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_array_, "0", _preferred_).</ins>
-        1. <ins>Return _array_.</ins>
+        1. If _preferred_ is *undefined*, then
+          1. Return CreateArrayFromList( _list_ ).
+        1. Let _array_ be ! ArrayCreate(0).
+        1. Perform ! CreateDataPropertyOrThrow(_array_, "0", _preferred_).
+        1. Return _array_.
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-calendars-of-locale" aoid=CalendarsOfLocale>
-      <h1><ins>CalendarsOfLocale ( _loc_ )</ins></h1>
+      <h1>CalendarsOfLocale ( _loc_ )</h1>
       <p>
-        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+        The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.
       </p>
 
       <emu-alg>
-        1. <ins>Let _preferred_ be _loc_.[[Calendar]].</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _list_ be a List of 1 or more unique calendar identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for date and time formatting in _locale_.</ins>
-        1. <ins>Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
+        1. Let _preferred_ be _loc_.[[Calendar]].
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
+        1. Let _list_ be a List of 1 or more unique calendar identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for date and time formatting in _locale_.
+        1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-collations-of-locale" aoid=CollationsOfLocale>
-      <h1><ins>CollationsOfLocale ( _loc_ )</ins></h1>
+      <h1>CollationsOfLocale ( _loc_ )</h1>
       <p>
-        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+        The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.
       </p>
 
       <emu-alg>
-        1. <ins>Let _preferred_ be _loc_.[[Collation]].</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _list_ be a List of 1 or more unique collation identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for string comparison in _locale_.</ins>
-        1. <ins>Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
+        1. Let _preferred_ be _loc_.[[Collation]].
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
+        1. Let _list_ be a List of 1 or more unique collation identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for string comparison in _locale_.
+        1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-hour-cycles-of-locale" aoid=HourCyclesOfLocale>
-      <h1><ins>HourCyclesOfLocale ( _loc_ )</ins></h1>
+      <h1>HourCyclesOfLocale ( _loc_ )</h1>
       <p>
-        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+        The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.
       </p>
 
       <emu-alg>
-        1. <ins>Let _preferred_ be _loc_.[[HourCycle]].</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _list_ be a List of 1 or more unique hour cycle identifiers, which must be lower case String values indicating either the 12-hour format (*"h11"*, *"h12"*) or the 24-hour format (*"h23"*, *"h24"*), sorted in descending preference of those in common use for date and time formatting in _locale_.</ins>
-        1. <ins>Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
+        1. Let _preferred_ be _loc_.[[HourCycle]].
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
+        1. Let _list_ be a List of 1 or more unique hour cycle identifiers, which must be lower case String values indicating either the 12-hour format (*"h11"*, *"h12"*) or the 24-hour format (*"h23"*, *"h24"*), sorted in descending preference of those in common use for date and time formatting in _locale_.
+        1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-numbering-systems-of-locale" aoid=NumberingSystemsOfLocale>
-      <h1><ins>NumberingSystemsOfLocale ( _loc_ )</ins></h1>
+      <h1>NumberingSystemsOfLocale ( _loc_ )</h1>
       <p>
-        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+        The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.
       </p>
 
       <emu-alg>
-        1. <ins>Let _preferred_ be _loc_.[[NumberingSystem]].</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _list_ be a List of 1 or more unique numbering system identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for formatting numeric values in _locale_.</ins>
-        1. <ins>Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).</ins>
+        1. Let _preferred_ be _loc_.[[NumberingSystem]].
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
+        1. Let _list_ be a List of 1 or more unique numbering system identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for formatting numeric values in _locale_.
+        1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-time-zones-of-locale" aoid=TimeZonesOfLocale>
-      <h1><ins>TimeZonesOfLocale ( _loc_ )</ins></h1>
+      <h1>TimeZonesOfLocale ( _loc_ )</h1>
       <p>
-        <ins>The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.</ins>
+        The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.
       </p>
 
       <emu-alg>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.</ins>
-        1. <ins>Let _list_ be a List of 1 or more unique time zone identifiers, which must be String values indicating a Zone or Link name of the IANA Time Zone Database, sorted in descending preference of those in common use in _region_.</ins>
-        1. <ins>Return ! CreateArrayFromList( _list_ ).</ins>
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
+        1. Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.
+        1. Let _list_ be a List of 1 or more unique time zone identifiers, which must be String values indicating a Zone or Link name of the IANA Time Zone Database, sorted in descending preference of those in common use in _region_.
+        1. Return ! CreateArrayFromList( _list_ ).
       </emu-alg>
     </emu-clause>
 
-    <ins class="block">
     <emu-clause id="sec-character-direction-of-locale" aoid=CharacterDirectionOfLocale>
       <h1>CharacterDirectionOfLocale ( _locale_ )</h1>
 
@@ -142,9 +142,9 @@
       </emu-table>
 
     </emu-clause>
-    </ins>
 
   </emu-clause>
+  </ins>
 
   <emu-clause id="sec-intl-locale-constructor">
     <h1>The Intl.Locale Constructor</h1>
@@ -498,91 +498,93 @@
       </emu-alg>
     </emu-clause>
 
+    <ins class="block">
     <emu-clause id="sec-Intl.Locale.prototype.calendars">
-      <h1><ins>get Intl.Locale.prototype.calendars</ins></h1>
-      <p><ins>`Intl.Locale.prototype.calendars` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</ins></p>
+      <h1>get Intl.Locale.prototype.calendars</h1>
+      <p>`Intl.Locale.prototype.calendars` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</p>
       <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Return CalendarsOfLocale(_loc_).</ins>
+        1. Let _loc_ be the *this* value.
+        1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
+        1. Return CalendarsOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-Intl.Locale.prototype.collations">
-      <h1><ins>get Intl.Locale.prototype.collations</ins></h1>
-      <p><ins>`Intl.Locale.prototype.collations` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</ins></p>
+      <h1>get Intl.Locale.prototype.collations</h1>
+      <p>`Intl.Locale.prototype.collations` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</p>
       <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Return CollationsOfLocale(_loc_).</ins>
+        1. Let _loc_ be the *this* value.
+        1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
+        1. Return CollationsOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-Intl.Locale.prototype.hourcycles">
-      <h1><ins>get Intl.Locale.prototype.hourCycles</ins></h1>
-      <p><ins>`Intl.Locale.prototype.hourCycles` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</ins></p>
+      <h1>get Intl.Locale.prototype.hourCycles</h1>
+      <p>`Intl.Locale.prototype.hourCycles` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</p>
       <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Return HourCyclesOfLocale(_loc_).</ins>
+        1. Let _loc_ be the *this* value.
+        1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
+        1. Return HourCyclesOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-Intl.Locale.prototype.numberingSystems">
-      <h1><ins>get Intl.Locale.prototype.numberingSystems</ins></h1>
-      <p><ins>`Intl.Locale.prototype.numberingSystems` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</ins></p>
+      <h1>get Intl.Locale.prototype.numberingSystems</h1>
+      <p>`Intl.Locale.prototype.numberingSystems` is an accessor property whose set accessor function is *undefined*. Its get accessor function performs the following steps:</p>
       <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Return NumberingSystemsOfLocale(_loc_).</ins>
+        1. Let _loc_ be the *this* value.
+        1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
+        1. Return NumberingSystemsOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-Intl.Locale.prototype.timezones">
-      <h1><ins>get Intl.Locale.prototype.timeZones</ins></h1>
-      <p><ins>`Intl.Locale.prototype.defaults` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.  Its get accessor function performs the following steps:</ins></p>
+      <h1>get Intl.Locale.prototype.timeZones</h1>
+      <p>`Intl.Locale.prototype.defaults` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.  Its get accessor function performs the following steps:</p>
       <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>If the `unicode_language_id` production of _locale_ does not contain the `["-" unicode_region_subtag]` sequence, return *undefined*.</ins>
-        1. <ins>Return TimeZonesOfLocale(_loc_).</ins>
+        1. Let _loc_ be the *this* value.
+        1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. If the `unicode_language_id` production of _locale_ does not contain the `["-" unicode_region_subtag]` sequence, return *undefined*.
+        1. Return TimeZonesOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-Intl.Locale.prototype.textInfo">
-      <h1><ins>get Intl.Locale.prototype.textInfo</ins></h1>
-      <p><ins>`Intl.Locale.prototype.textInfo` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to Locale data specified in <a href="https://www.unicode.org/reports/tr35/tr35-general.html#Layout_Elements">UTS 35's Layouts Elements</a>. Its get accessor function performs the following steps:</ins></p>
+      <h1>get Intl.Locale.prototype.textInfo</h1>
+      <p>`Intl.Locale.prototype.textInfo` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to Locale data specified in <a href="https://www.unicode.org/reports/tr35/tr35-general.html#Layout_Elements">UTS 35's Layouts Elements</a>. Its get accessor function performs the following steps:</p>
       <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _info_ be ! ObjectCreate(%Object.prototype%).</ins>
-        1. <ins>Let _dir_ be CharacterDirectionOfLocale(_locale_)
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"direction"*, _dir_).</ins>
-        1. <ins>Return _info_.</ins>
+        1. Let _loc_ be the *this* value.
+        1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
+        1. Let _info_ be ! ObjectCreate(%Object.prototype%).
+        1. Let _dir_ be CharacterDirectionOfLocale(_locale_)
+        1. Perform ! CreateDataPropertyOrThrow(_info_, *"direction"*, _dir_).
+        1. Return _info_.
       </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-Intl.Locale.prototype.weekInfo">
-      <h1><ins>get Intl.Locale.prototype.weekInfo</ins></h1>
-      <p><ins>`Intl.Locale.prototype.weekInfo` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to Locale data specified in <a href="https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Patterns_Week_Elements">UTS 35's Week Elements</a>. Its get accessor function performs the following steps:</ins></p>
+      <h1>get Intl.Locale.prototype.weekInfo</h1>
+      <p>`Intl.Locale.prototype.weekInfo` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to Locale data specified in <a href="https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Patterns_Week_Elements">UTS 35's Week Elements</a>. Its get accessor function performs the following steps:</p>
       <emu-alg>
-        1. <ins>Let _loc_ be the *this* value.</ins>
-        1. <ins>Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).</ins>
-        1. <ins>Let _locale_ be _loc_.[[Locale]].</ins>
-        1. <ins>Assert: _locale_ matches the `unicode_locale_id` production.</ins>
-        1. <ins>Let _info_ be ! ObjectCreate(%Object.prototype%).</ins>
-        1. <ins>Let _wi_ be WeekInfoOfLocale(_locale_)</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"firstDay"*, _wi_.[[FirstDay]]).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"weekendStart"*, _wi_.[[WeekendStart]]).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"weekendEnd"*, _wi_.[[WeekendEnd]]).</ins>
-        1. <ins>Perform ! CreateDataPropertyOrThrow(_info_, *"minimalDays"*, _wi_.[[MinimalDays]]).</ins>
-        1. <ins>Return _info_.</ins>
+        1. Let _loc_ be the *this* value.
+        1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
+        1. Let _info_ be ! ObjectCreate(%Object.prototype%).
+        1. Let _wi_ be WeekInfoOfLocale(_locale_)
+        1. Perform ! CreateDataPropertyOrThrow(_info_, *"firstDay"*, _wi_.[[FirstDay]]).
+        1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekendStart"*, _wi_.[[WeekendStart]]).
+        1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekendEnd"*, _wi_.[[WeekendEnd]]).
+        1. Perform ! CreateDataPropertyOrThrow(_info_, *"minimalDays"*, _wi_.[[MinimalDays]]).
+        1. Return _info_.
       </emu-alg>
 
     </emu-clause>
+    </ins>
 
   </emu-clause>
 </emu-clause>
