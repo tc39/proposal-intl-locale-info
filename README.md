@@ -49,7 +49,7 @@ Stage 3
   * $ out/x64.release/d8 --harmony_intl_locale_info
   * Chrome - [TBD](https://www.chromestatus.com/feature/5566859262820352)
   * Edge - ???
-* FireFox - ???
+* FireFox - [Tracking Bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1693576)
 * Safari - ???
 
 ## Scope
