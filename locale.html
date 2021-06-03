@@ -41,7 +41,7 @@
         1. Let _preferred_ be _loc_.[[Collation]].
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
-        1. Let _list_ be a List of 1 or more collation identifiers, which must be String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use in the _locale_ for string comparison. The values *"standard"* and *"search"* must be excluded from _list_.
+        1. Let _list_ be a List of 1 or more unique collation identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for string comparison in _locale_. The values *"standard"* and *"search"* must be excluded from _list_.
         1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
       </emu-alg>
     </emu-clause>
