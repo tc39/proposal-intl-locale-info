@@ -92,9 +92,11 @@
     </emu-clause>
 
     <emu-clause id="sec-character-direction-of-locale" aoid=CharacterDirectionOfLocale>
-      <h1>CharacterDirectionOfLocale ( _locale_ )</h1>
+      <h1>CharacterDirectionOfLocale ( _loc_ )</h1>
 
       <emu-alg>
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. If the default general ordering of characters (characterOrder) within a line in _locale_ is right-to-left, return *"rtl"*.
         1. Return *"ltr"*.
       </emu-alg>
@@ -102,9 +104,11 @@
     </emu-clause>
 
     <emu-clause id="sec-week-info-of-locale" aoid=WeekInfoOfLocale>
-      <h1>WeekInfoOfLocale ( _locale_ )</h1>
+      <h1>WeekInfoOfLocale ( _loc_ )</h1>
 
       <emu-alg>
+        1. Let _locale_ be _loc_.[[Locale]].
+        1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Return a record whose fields are defined by <emu-xref href="#table-locale-weekinfo-record"></emu-xref>, with values based on _locale_.
       </emu-alg>
 
@@ -557,10 +561,8 @@
       <emu-alg>
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
-        1. Let _locale_ be _loc_.[[Locale]].
-        1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _info_ be ! ObjectCreate(%Object.prototype%).
-        1. Let _dir_ be CharacterDirectionOfLocale(_locale_)
+        1. Let _dir_ be CharacterDirectionOfLocale(_loc_)
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"direction"*, _dir_).
         1. Return _info_.
       </emu-alg>
@@ -572,10 +574,8 @@
       <emu-alg>
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
-        1. Let _locale_ be _loc_.[[Locale]].
-        1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _info_ be ! ObjectCreate(%Object.prototype%).
-        1. Let _wi_ be WeekInfoOfLocale(_locale_)
+        1. Let _wi_ be WeekInfoOfLocale(_loc_)
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"firstDay"*, _wi_.[[FirstDay]]).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekendStart"*, _wi_.[[WeekendStart]]).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekendEnd"*, _wi_.[[WeekendEnd]]).
