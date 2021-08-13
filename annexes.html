@@ -1,0 +1,29 @@
+<emu-annex id="annex-implementation-dependent-behaviour">
+  <h1>Implementation Dependent Behaviour</h1>
+
+  <p>
+    The following aspects of the ECMAScript 2022 Internationalization API Specification are implementation dependent:
+  </p>
+
+  <ul>
+    <li>
+      In Locale:
+      <ul>
+        <li>
+          Support for the Unicode extensions keys *"kf"*, *"kn"* and the parallel options properties *"caseFirst"*, *"numeric"* (<emu-xref href="#sec-Intl.Locale"></emu-xref>)
+        </li>
+        <ins class="block">
+        <li>
+          The set of preferred calendars (<emu-xref href="#sec-calendars-of-locale"></emu-xref>), collations (<emu-xref href="#sec-collations-of-locale"></emu-xref>), hour cycles (<emu-xref href="#sec-hour-cycles-of-locale"></emu-xref>), numbering systems (<emu-xref href="#sec-numbering-systems-of-locale"></emu-xref>), and time zones  (<emu-xref href="#sec-time-zones-of-locale"></emu-xref>) per locale
+        </li>
+        <li>
+          The default general ordering of characters (characterOrder) within a line per locale (<emu-xref href="#sec-character-direction-of-locale"></emu-xref>)
+        </li>
+        <li>
+          The 'first' day of a week, the minimal days required in the first week of a month or year, and the weekday of the starting and ending day of the 'weekend', for calendar purposes, per locale (<emu-xref href="#sec-week-info-of-locale"></emu-xref>)
+        </li>
+        </ins>
+      </ul>
+    </li>
+  </ul>
+</emu-annex>
