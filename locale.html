@@ -7,6 +7,9 @@
 
     <emu-clause id="sec-create-array-from-list-and-preferred" aoid=CreateArrayFromListAndPreferred>
       <h1>CreateArrayFromListAndPreferred ( _list_ , _preferred_ )</h1>
+      <p>
+        The abstract operation CreateArrayFromListAndPreferred accepts the arguments _list_ and _preferred_ , and performs the following steps:
+      </p>
       <emu-alg>
         1. If _preferred_ is *undefined*, then
           1. Return CreateArrayFromList( _list_ ).
@@ -93,7 +96,9 @@
 
     <emu-clause id="sec-character-direction-of-locale" aoid=CharacterDirectionOfLocale>
       <h1>CharacterDirectionOfLocale ( _loc_ )</h1>
-
+      <p>
+        The abstract operation CharacterDirectionOfLocale accepts the argument _loc_ , and performs the following steps:
+      </p>
       <emu-alg>
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
@@ -105,7 +110,9 @@
 
     <emu-clause id="sec-week-info-of-locale" aoid=WeekInfoOfLocale>
       <h1>WeekInfoOfLocale ( _loc_ )</h1>
-
+      <p>
+        The abstract operation WeekInfoOfLocale accepts the argument _loc_ , and performs the following steps:
+      </p>
       <emu-alg>
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
