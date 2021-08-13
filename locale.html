@@ -5,16 +5,16 @@
   <emu-clause id="sec-locale-abstracts">
     <h1>Abstract Operations for Locale Objects</h1>
 
-    <emu-clause id="sec-create-array-from-list-and-preferred" aoid=CreateArrayFromListAndPreferred>
-      <h1>CreateArrayFromListAndPreferred ( _list_ , _preferred_ )</h1>
+    <emu-clause id="sec-create-array-from-list-or-restricted" aoid=CreateArrayFromListOrRestricted>
+      <h1>CreateArrayFromListOrRestricted ( _list_ , _restricted_ )</h1>
       <p>
-        The abstract operation CreateArrayFromListAndPreferred accepts the arguments _list_ and _preferred_ , and performs the following steps:
+        The abstract operation CreateArrayFromListOrRestricted accepts the arguments _list_ and _restricted_ , and performs the following steps:
       </p>
       <emu-alg>
-        1. If _preferred_ is *undefined*, then
+        1. If _restricted_ is *undefined*, then
           1. Return CreateArrayFromList( _list_ ).
         1. Let _array_ be ! ArrayCreate(0).
-        1. Perform ! CreateDataPropertyOrThrow(_array_, "0", _preferred_).
+        1. Perform ! CreateDataPropertyOrThrow(_array_, "0", _restricted_).
         1. Return _array_.
       </emu-alg>
     </emu-clause>
@@ -26,11 +26,11 @@
       </p>
 
       <emu-alg>
-        1. Let _preferred_ be _loc_.[[Calendar]].
+        1. Let _restricted_ be _loc_.[[Calendar]].
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _list_ be a List of 1 or more unique calendar identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for date and time formatting in _locale_.
-        1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
+        1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
 
@@ -41,11 +41,11 @@
       </p>
 
       <emu-alg>
-        1. Let _preferred_ be _loc_.[[Collation]].
+        1. Let _restricted_ be _loc_.[[Collation]].
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _list_ be a List of 1 or more unique collation identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for string comparison in _locale_. The values *"standard"* and *"search"* must be excluded from _list_.
-        1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
+        1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
 
@@ -56,11 +56,11 @@
       </p>
 
       <emu-alg>
-        1. Let _preferred_ be _loc_.[[HourCycle]].
+        1. Let _restricted_ be _loc_.[[HourCycle]].
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _list_ be a List of 1 or more unique hour cycle identifiers, which must be lower case String values indicating either the 12-hour format (*"h11"*, *"h12"*) or the 24-hour format (*"h23"*, *"h24"*), sorted in descending preference of those in common use for date and time formatting in _locale_.
-        1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
+        1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
 
@@ -71,11 +71,11 @@
       </p>
 
       <emu-alg>
-        1. Let _preferred_ be _loc_.[[NumberingSystem]].
+        1. Let _restricted_ be _loc_.[[NumberingSystem]].
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _list_ be a List of 1 or more unique numbering system identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for formatting numeric values in _locale_.
-        1. Return ! CreateArrayFromListAndPreferred( _list_, _preferred_ ).
+        1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
 
