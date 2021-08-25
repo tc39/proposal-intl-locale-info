@@ -20,3 +20,4 @@ contributors: Google, Ecma International
 
 <emu-biblio href="./biblio.json"></emu-biblio>
 <emu-import href="./locale.html"></emu-import>
+<emu-import href="./annexes.html"></emu-import>
