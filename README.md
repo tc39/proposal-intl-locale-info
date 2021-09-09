@@ -106,7 +106,7 @@ enGB.weekInfo
 
 let msBN = new Intl.Locale("ms-BN")
 msBN.weekInfo
-// {firstDay: 7, weekend: [5, 7], minimalDays: 1}  // Burnie weekend is Friday and Sunday but not Saturday 
+// {firstDay: 7, weekend: [5, 7], minimalDays: 1}  // Brunei weekend is Friday and Sunday but not Saturday 
 ```
 Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
 #### Text Information
