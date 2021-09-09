@@ -29,7 +29,7 @@
         1. Let _restricted_ be _loc_.[[Calendar]].
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
-        1. Let _list_ be a List of 1 or more unique calendar identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for date and time formatting in _locale_.
+        1. Let _list_ be a List of 1 or more unique canonical calendar identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for date and time formatting in _locale_.
         1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
@@ -44,7 +44,7 @@
         1. Let _restricted_ be _loc_.[[Collation]].
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
-        1. Let _list_ be a List of 1 or more unique collation identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for string comparison in _locale_. The values *"standard"* and *"search"* must be excluded from _list_.
+        1. Let _list_ be a List of 1 or more unique canonical collation identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for string comparison in _locale_. The values *"standard"* and *"search"* must be excluded from _list_.
         1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
@@ -74,7 +74,7 @@
         1. Let _restricted_ be _loc_.[[NumberingSystem]].
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
-        1. Let _list_ be a List of 1 or more unique numbering system identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for formatting numeric values in _locale_.
+        1. Let _list_ be a List of 1 or more unique canonical numbering system identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for formatting numeric values in _locale_.
         1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
