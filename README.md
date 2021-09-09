@@ -96,13 +96,17 @@ Add methods to Intl to get object to contains group of information:
 ```js
 let he = new Intl.Locale("he")
 he.weekInfo
-// {firstDay: 7, weekendStart: 5, weekendEnd: 6, minimalDays: 1}
+// {firstDay: 7, weekend: [5, 6], minimalDays: 1}
 let af = new Intl.Locale("af")
 af.weekInfo
-// {firstDay: 7, weekendStart: 6, weekendEnd: 7, minimalDays: 1}
+// {firstDay: 7, weekend: [6, 7], minimalDays: 1}
 enGB = new Intl.Locale("en-GB")
 enGB.weekInfo
-// {firstDay: 1, weekendStart: 6, weekendEnd: 7, minimalDays: 4}
+// {firstDay: 1, weekend: [6, 7], minimalDays: 4}
+
+let msBN = new Intl.Locale("ms-BN")
+msBN.weekInfo
+// {firstDay: 7, weekend: [5, 7], minimalDays: 1}  // Brunei weekend is Friday and Sunday but not Saturday 
 ```
 Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
 #### Text Information

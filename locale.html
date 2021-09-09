@@ -135,14 +135,10 @@
             <td>The weekday value indicating which day of the week is considered the 'first' day, for calendar purposes.</td>
           </tr>
           <tr>
-            <td>[[WeekendStart]]</td>
-            <td>Integer value between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</td>
-            <td>The weekday value indicating which day of the week is considered the starting day of the 'weekend', for calendar purposes.</td>
-          </tr>
-          <tr>
-            <td>[[WeekendEnd]]</td>
-            <td>Integer value between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</td>
-            <td>The weekday value indicating which day of the week is considered the ending day of the 'weekend', for calendar purposes.</td>
+            <td>[[Weekend]]</td>
+            <td>A List of 1 or more integer values between 1 and 7: 1 specifies Monday; 2 specifies Tuesday; 3 specifies Wednesday; 4 specifies Thursday; 5 specifies Friday; 6 specifies Saturday; and 7 specifies Sunday.</td>
+```
+            <td>The list of weekday values indicating which days of the week are considered as part of the 'weekend', for calendar purposes. Notice that the number of days in the weekend are different in each locale and may not be contiguous.</td>
           </tr>
           <tr>
             <td>[[MinimalDays]]</td>
@@ -516,7 +512,7 @@
       <emu-alg>
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
-        1. Return CalendarsOfLocale(_loc_).
+        1. Return ! CalendarsOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
@@ -526,7 +522,7 @@
       <emu-alg>
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
-        1. Return CollationsOfLocale(_loc_).
+        1. Return ! CollationsOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
@@ -536,7 +532,7 @@
       <emu-alg>
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
-        1. Return HourCyclesOfLocale(_loc_).
+        1. Return ! HourCyclesOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
@@ -546,7 +542,7 @@
       <emu-alg>
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
-        1. Return NumberingSystemsOfLocale(_loc_).
+        1. Return ! NumberingSystemsOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
@@ -558,7 +554,7 @@
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
         1. Let _locale_ be _loc_.[[Locale]].
         1. If the `unicode_language_id` production of _locale_ does not contain the `["-" unicode_region_subtag]` sequence, return *undefined*.
-        1. Return TimeZonesOfLocale(_loc_).
+        1. Return ! TimeZonesOfLocale(_loc_).
       </emu-alg>
     </emu-clause>
 
@@ -569,7 +565,7 @@
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
         1. Let _info_ be ! ObjectCreate(%Object.prototype%).
-        1. Let _dir_ be CharacterDirectionOfLocale(_loc_)
+        1. Let _dir_ be ! CharacterDirectionOfLocale(_loc_).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"direction"*, _dir_).
         1. Return _info_.
       </emu-alg>
@@ -582,10 +578,10 @@
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
         1. Let _info_ be ! ObjectCreate(%Object.prototype%).
-        1. Let _wi_ be WeekInfoOfLocale(_loc_)
+        1. Let _wi_ be ! WeekInfoOfLocale(_loc_).
+        1. Let _we_ be ! CreateArrayFromList( _wi_.[[Weekend]] ).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"firstDay"*, _wi_.[[FirstDay]]).
-        1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekendStart"*, _wi_.[[WeekendStart]]).
-        1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekendEnd"*, _wi_.[[WeekendEnd]]).
+        1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekend"*, _we_).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"minimalDays"*, _wi_.[[MinimalDays]]).
         1. Return _info_.
       </emu-alg>
