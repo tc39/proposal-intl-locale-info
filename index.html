@@ -2169,9 +2169,8 @@ li.menu-search-result-term:before {
 
     <emu-clause id="sec-Intl.Locale.prototype.timeZones">
       <h1><span class="secnum">1.4.20</span> get Intl.Locale.prototype.timeZones</h1>
-
       <p><code>Intl.Locale.prototype.timeZones</code> is an <emu-xref href="#sec-object-type"><a href="https://tc39.es/ecma262/#sec-object-type">accessor property</a></emu-xref> whose set accessor function is <emu-val>undefined</emu-val>. The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.  Its get accessor function performs the following steps:</p>
-      <emu-alg><ol><li>Let <var>loc</var> be the <emu-val>this</emu-val> value.</li><li>Perform ?&nbsp;<emu-xref aoid="RequireInternalSlot"><a href="https://tc39.es/ecma262/#sec-requireinternalslot">RequireInternalSlot</a></emu-xref>(<var>loc</var>, [[InitializedLocale]]).</li><li>Let <var>locale</var> be <var>loc</var>.[[Locale]].</li><li>If the <code>unicode_language_id</code> production of <var>locale</var> does not contain the <code>["-" unicode_region_subtag]</code> sequence, return <emu-val>undefined</emu-val>.</li><li>Return !&nbsp;<emu-xref aoid="TimeZonesOfLocale" id="_ref_44"><a href="#sec-time-zones-of-locale">TimeZonesOfLocale</a></emu-xref>(<var>loc</var>).</li></ol></emu-alg>
+      <emu-alg><ol><li>Let <var>loc</var> be the <emu-val>this</emu-val> value.</li><li>Perform ?&nbsp;<emu-xref aoid="RequireInternalSlot"><a href="https://tc39.es/ecma262/#sec-requireinternalslot">RequireInternalSlot</a></emu-xref>(<var>loc</var>, [[InitializedLocale]]).</li><li>Let <var>locale</var> be <var>loc</var>.[[Locale]].</li><li>If the <code>unicode_language_id</code> production of <var>locale</var> does not contain the <code>["-" unicode_region_subtag]</code> sequence, return <emu-val>undefined</emu-val>.</li><li>Return !&nbsp;<emu-xref aoid="TimeZonesOfLocale" id="_ref_42"><a href="#sec-time-zones-of-locale">TimeZonesOfLocale</a></emu-xref>(<var>loc</var>).</li></ol></emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-Intl.Locale.prototype.textInfo">
