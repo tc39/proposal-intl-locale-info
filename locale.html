@@ -11,11 +11,9 @@
         The abstract operation CreateArrayFromListOrRestricted accepts the arguments _list_ and _restricted_ , and performs the following steps:
       </p>
       <emu-alg>
-        1. If _restricted_ is *undefined*, then
-          1. Return CreateArrayFromList( _list_ ).
-        1. Let _array_ be ! ArrayCreate(0).
-        1. Perform ! CreateDataPropertyOrThrow(_array_, "0", _restricted_).
-        1. Return _array_.
+        1. If _restricted_ is not *undefined*, then
+          1. Set _list_ to &laquo; _restricted_ &raquo;.
+        1. Return ! CreateArrayFromList( _list_ ).
       </emu-alg>
     </emu-clause>
 
