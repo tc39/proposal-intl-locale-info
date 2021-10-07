@@ -11,11 +11,9 @@
         The abstract operation CreateArrayFromListOrRestricted accepts the arguments _list_ and _restricted_ , and performs the following steps:
       </p>
       <emu-alg>
-        1. If _restricted_ is *undefined*, then
-          1. Return CreateArrayFromList( _list_ ).
-        1. Let _array_ be ! ArrayCreate(0).
-        1. Perform ! CreateDataPropertyOrThrow(_array_, "0", _restricted_).
-        1. Return _array_.
+        1. If _restricted_ is not *undefined*, then
+          1. Set _list_ to &laquo; _restricted_ &raquo;.
+        1. Return ! CreateArrayFromList( _list_ ).
       </emu-alg>
     </emu-clause>
 
@@ -548,7 +546,7 @@
 
     <emu-clause id="sec-Intl.Locale.prototype.timeZones">
       <h1>get Intl.Locale.prototype.timeZones</h1>
-      <p>`Intl.Locale.prototype.defaults` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.  Its get accessor function performs the following steps:</p>
+      <p>`Intl.Locale.prototype.timeZones` is an accessor property whose set accessor function is *undefined*. The following algorithm refers to <a href="https://www.unicode.org/reports/tr35/#Identifiers">UTS 35's Unicode Language and Locale Identifiers grammar</a>.  Its get accessor function performs the following steps:</p>
       <emu-alg>
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
