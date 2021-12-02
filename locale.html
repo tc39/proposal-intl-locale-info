@@ -87,7 +87,7 @@
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.
-        1. Let _list_ be a List of 1 or more unique time zone identifiers, which must be String values indicating a Zone or Link name of the IANA Time Zone Database, ordered as if an Array of the same values had been sorted using %Array.prototype.sort% using *undefined* as _comparefn_, of those in common use in _region_.
+        1. Let _list_ be a List of unique canonical time zone identifiers, which must be String values indicating a canonical Zone name of the IANA Time Zone Database, ordered as if an Array of the same values had been sorted using %Array.prototype.sort% using *undefined* as _comparefn_, of those in common use in _region_. If no time zones are commonly used in _region_, let list be a new empty List.
         1. Return ! CreateArrayFromList( _list_ ).
       </emu-alg>
     </emu-clause>
