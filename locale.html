@@ -6,14 +6,16 @@
     <h1>Abstract Operations for Locale Objects</h1>
 
     <emu-clause id="sec-create-array-from-list-or-restricted" aoid=CreateArrayFromListOrRestricted>
-      <h1>CreateArrayFromListOrRestricted ( _list_ , _restricted_ )</h1>
+      <h1>CreateFrozenArrayFromListOrRestricted ( _list_ , _restricted_ )</h1>
       <p>
-        The abstract operation CreateArrayFromListOrRestricted accepts the arguments _list_ and _restricted_ , and performs the following steps:
+        The abstract operation CreateFrozenArrayFromListOrRestricted accepts the arguments _list_ and _restricted_ , and performs the following steps:
       </p>
       <emu-alg>
         1. If _restricted_ is not *undefined*, then
           1. Set _list_ to &laquo; _restricted_ &raquo;.
-        1. Return ! CreateArrayFromList( _list_ ).
+        1. Let _array_ be ! CreateArrayFromList( _list_ ).
+        1. Perform ! SetIntegrityLevel(_array_, ~frozen~).
+        1. Return _array_;
       </emu-alg>
     </emu-clause>
 
@@ -28,7 +30,7 @@
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _list_ be a List of 1 or more unique canonical calendar identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for date and time formatting in _locale_.
-        1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
+        1. Return ! CreateFrozenArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
 
@@ -43,7 +45,7 @@
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _list_ be a List of 1 or more unique canonical collation identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for string comparison in _locale_. The values *"standard"* and *"search"* must be excluded from _list_.
-        1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
+        1. Return ! CreateFrozenArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
 
@@ -58,7 +60,7 @@
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _list_ be a List of 1 or more unique hour cycle identifiers, which must be lower case String values indicating either the 12-hour format (*"h11"*, *"h12"*) or the 24-hour format (*"h23"*, *"h24"*), sorted in descending preference of those in common use for date and time formatting in _locale_.
-        1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
+        1. Return ! CreateFrozenArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
 
@@ -73,7 +75,7 @@
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _list_ be a List of 1 or more unique canonical numbering system identifiers, which must be lower case String values conforming to the type sequence from <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">UTS 35 Unicode Locale Identifier, section 3.2</a>, sorted in descending preference of those in common use for formatting numeric values in _locale_.
-        1. Return ! CreateArrayFromListOrRestricted( _list_, _restricted_ ).
+        1. Return ! CreateFrozenArrayFromListOrRestricted( _list_, _restricted_ ).
       </emu-alg>
     </emu-clause>
 
@@ -88,7 +90,9 @@
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _region_ be the substring of _locale_ corresponding to the `unicode_region_subtag` production of the `unicode_language_id`.
         1. Let _list_ be a List of unique canonical time zone identifiers, which must be String values indicating a canonical Zone name of the IANA Time Zone Database, ordered as if an Array of the same values had been sorted using %Array.prototype.sort% using *undefined* as _comparefn_, of those in common use in _region_. If no time zones are commonly used in _region_, let list be a new empty List.
-        1. Return ! CreateArrayFromList( _list_ ).
+        1. Let _array_ be ! CreateArrayFromList( _list_ ).
+        1. Perform ! SetIntegrityLevel(_array_, ~frozen~).
+        1. Return _array_;
       </emu-alg>
     </emu-clause>
 
@@ -564,6 +568,7 @@
         1. Let _info_ be ! ObjectCreate(%Object.prototype%).
         1. Let _dir_ be ! CharacterDirectionOfLocale(_loc_).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"direction"*, _dir_).
+        1. Perform ! SetIntegrityLevel(_info_, ~frozen~).
         1. Return _info_.
       </emu-alg>
     </emu-clause>
@@ -577,9 +582,11 @@
         1. Let _info_ be ! ObjectCreate(%Object.prototype%).
         1. Let _wi_ be ! WeekInfoOfLocale(_loc_).
         1. Let _we_ be ! CreateArrayFromList( _wi_.[[Weekend]] ).
+        1. Perform ! SetIntegrityLevel(_we_, ~frozen~).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"firstDay"*, _wi_.[[FirstDay]]).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekend"*, _we_).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"minimalDays"*, _wi_.[[MinimalDays]]).
+        1. Perform ! SetIntegrityLevel(_info_, ~frozen~).
         1. Return _info_.
       </emu-alg>
 
