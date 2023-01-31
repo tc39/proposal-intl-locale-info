@@ -98,24 +98,24 @@ Add methods to Intl to get object to contains group of information:
 
 ```js
 let he = new Intl.Locale("he")
-he.weekInfo
+he.getWeekInfo()
 // {firstDay: 7, weekend: [5, 6], minimalDays: 1}
 let af = new Intl.Locale("af")
-af.weekInfo
+af.getWeekInfo()
 // {firstDay: 7, weekend: [6, 7], minimalDays: 1}
 enGB = new Intl.Locale("en-GB")
-enGB.weekInfo
+enGB.getWeekInfo()
 // {firstDay: 1, weekend: [6, 7], minimalDays: 4}
 
 let msBN = new Intl.Locale("ms-BN")
-msBN.weekInfo
+msBN.getWeekInfo()
 // {firstDay: 7, weekend: [5, 7], minimalDays: 1}  // Brunei weekend is Friday and Sunday but not Saturday 
 ```
 Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
 #### Text Information
 ```js
 l = new Intl.Locale("ar")
-let textInfo = l.textInfo;
+let textInfo = l.getTextInfo();
 // { direction: "rtl" }
 l.textInfo.direction
 // rtl
@@ -127,145 +127,145 @@ l.textInfo.direction
 V8 version 9.1.0 (candidate)
 d8> ar = new Intl.Locale("ar")
 ar
-d8> ar.calendars
+d8> ar.getCalendars()
 ["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"]
-d8> ar.collations
+d8> ar.getCollations()
 ["compat", "emoji", "eor"]
-d8> ar.hourCycles
+d8> ar.getHourCycles()
 ["h12"]
-d8> ar.numberingSystems
+d8> ar.getNumberingSystems()
 ["latn"]
-d8> ar.timeZones
+d8> ar.getTimeZones()
 undefined
 
 d8> arEG = new Intl.Locale("ar-EG")
 ar-EG
-d8> arEG.calendars
+d8> arEG.getCalendars()
 ["gregory", "coptic", "islamic", "islamic-civil", "islamic-tbla"]
-d8> arEG.collations
+d8> arEG.getCollations()
 ["compat", "emoji", "eor"]
-d8> arEG.hourCycles
+d8> arEG.getHourCycles()
 ["h12"]
-d8> arEG.numberingSystems
+d8> arEG.getNumberingSystems()
 ["arab"]
-d8> arEG.timeZones
+d8> arEG.getTimeZones()
 ["Africa/Cairo"]
 
 d8> arSA = new Intl.Locale("ar-SA")
 ar-SA
-d8> arSA.calendars
+d8> arSA.getCalendars()
 ["islamic-umalqura", "gregory", "islamic", "islamic-rgsa"]
-d8> arSA.collations
+d8> arSA.getCollations()
 ["compat", "emoji", "eor"]
-d8> arSA.hourCycles
+d8> arSA.getHourCycles()
 ["h12"]
-d8> arSA.numberingSystems
+d8> arSA.getNumberingSystems()
 ["arab"]
-d8> arSA.timeZones
+d8> arSA.getTimeZones()
 timeZones: ["Asia/Riyadh"]
 
 d8> ja = new Intl.Locale("ja")
 ja
-d8> ja.calendars
+d8> ja.getCalendars()
 ["gregory", "japanese"]
-d8> ja.collations
+d8> ja.getCollations()
 ["unihan", "emoji", "eor"]
-d8> ja.hourCycles
+d8> ja.getHourCycles()
 ["h23"]
-d8> ja.numberingSystems
+d8> ja.getNumberingSystems()
 ["latn"]
-d8> ja.timeZones
+d8> ja.getTimeZones()
 undefined
 
 d8> jaJP = new Intl.Locale("ja-JP")
 ja-JP
-d8> jaJP.calendars
+d8> jaJP.getCalendars()
 ["gregory", "japanese"]
-d8> jaJP.collations
+d8> jaJP.getCollations()
 ["unihan", "emoji", "eor"]
-d8> jaJP.hourCycles
+d8> jaJP.getHourCycles()
 ["h23"]
-d8> jaJP.numberingSystems
+d8> jaJP.getNumberingSystems()
 ["latn"]
-d8> jaJP.timeZones
+d8> jaJP.getTimeZones()
 ["Asia/Tokyo"]}
 
 d8> enUS = new Intl.Locale("en-US")
 en-US
-d8> enUS.calendars
+d8> enUS.getCalendars()
 ["gregory"]
-d8> enUS.collations
+d8> enUS.getCollations()
 ["emoji", "eor"]
-d8> enUS.hourCycles
+d8> enUS.getHourCycles()
 ["h12"]
-d8> enUS.numberingSystems
+d8> enUS.getNumberingSystems()
 ["latn"]
-d8> enUS.timeZones
+d8> enUS.getTimeZones()
 ["America/Adak", "America/Anchorage", "America/Boise", "America/Chicago", "America/Denver", "America/Detroit", "America/Indiana/Knox", "America/Indiana/Marengo", "America/Indiana/Petersburg", "America/Indiana/Tell_City", "America/Indiana/Vevay", "America/Indiana/Vincennes", "America/Indiana/Winamac", "America/Indianapolis", "America/Juneau", "America/Kentucky/Monticello", "America/Los_Angeles", "America/Louisville", "America/Menominee", "America/Metlakatla", "America/New_York", "America/Nome", "America/North_Dakota/Beulah", "America/North_Dakota/Center", "America/North_Dakota/New_Salem", "America/Phoenix", "America/Sitka", "America/Yakutat", "Pacific/Honolulu"]
 
 d8> enNZ = new Intl.Locale("en-NZ")
 en-NZ
-d8> enNZ.calendars
+d8> enNZ.getCalendars()
 ["gregory"]
-d8> enNZ.collations
+d8> enNZ.getCollations()
 ["emoji", "eor"]
-d8> enNZ.hourCycles
+d8> enNZ.getHourCycles()
 ["h12"]
-d8> enNZ.numberingSystems
+d8> enNZ.getNumberingSystems()
 ["latn"]
-d8> enNZ.timeZones
+d8> enNZ.getTimeZones()
 ["Pacific/Auckland", "Pacific/Chatham"]
 
 d8> zh = new Intl.Locale("zh")
 zh
-d8> zh.calendars
+d8> zh.getCalendars()
 ["gregory", "chinese"]
-d8> zh.collations
+d8> zh.getCollations()
 ["pinyin", "big5han", "gb2312han", "stroke", "unihan", "zhuyin", "emoji", "eor"]
-d8> zh.hourCycles
+d8> zh.getHourCycles()
 ["h12"]
-d8> zh.numberingSystems
+d8> zh.getNumberingSystems()
 ["latn"]
-d8> zh.timeZones
+d8> zh.getTimeZones()
 undefined
 
 d8> zhTW = new Intl.Locale("zh-TW")      
 zh-TW
-d8>  zhTW.calendars
+d8>  zhTW.getCalendars()
 ["gregory", "roc", "chinese"]
-d8>  zhTW.collations
+d8>  zhTW.getCollations()
 ["stroke", "big5han", "gb2312han", "pinyin", "unihan", "zhuyin", "emoji", "eor"]
-d8>  zhTW.hourCycles
+d8>  zhTW.getHourCycles()
 ["h12"]
-d8>  zhTW.numberingSystems
+d8>  zhTW.getNumberingSystems()
 ["latn"]
-d8>  zhTW.timeZones
+d8>  zhTW.getTimeZones()
 ["Asia/Taipei"]
 
 d8> zhHK = new Intl.Locale("zh-HK")
 zh-HK
-d8> zhHK.calendars
+d8> zhHK.getCalendars()
 ["gregory", "chinese"]
-d8> zhHK.collations
+d8> zhHK.getCollations()
 ["stroke", "big5han", "gb2312han", "pinyin", "unihan", "zhuyin", "emoji", "eor"]
-d8> zhHK.hourCycles
+d8> zhHK.getHourCycles()
 ["h12"]
-d8> zhHK.numberingSystems
+d8> zhHK.getNumberingSystems()
 ["latn"]
-d8> zhHK.timeZones
+d8> zhHK.getTimeZones()
 ["Asia/Hong_Kong"]
 
 d8> fa = new Intl.Locale("fa")
 fa
-d8> fa.calendars
+d8> fa.getCalendars()
 ["persian", "gregory", "islamic", "islamic-civil", "islamic-tbla"]
-d8> fa.collations
+d8> fa.getCollations()
 ["emoji", "eor"]
-d8> fa.hourCycles
+d8> fa.getHourCycles()
 ["h23"]
-d8> fa.numberingSystems
+d8> fa.getNumberingSystems()
 ["arabext"]
-d8> fa.timeZones
+d8> fa.getTimeZones()
 undefined 
 
 ```
