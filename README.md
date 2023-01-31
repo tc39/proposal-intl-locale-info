@@ -115,9 +115,9 @@ Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal pr
 #### Text Information
 ```js
 l = new Intl.Locale("ar")
-let textInfo = l.getTextInfo();
+let ti = l.getTextInfo();
 // { direction: "rtl" }
-l.textInfo.direction
+ti.direction
 // rtl
 ```
 
