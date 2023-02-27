@@ -14,7 +14,7 @@ Stage 3
 * [Update during Stage 3](https://docs.google.com/presentation/d/1-Jhck0M2zhkiWsSxTX_bTik7e5072Xw87f_KOVSbfs0/) in [TC39 2021-10 meeting](https://github.com/tc39/notes/blob/master/meetings/2021-10/oct-26.md#intl-locale-info-update)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1PZ0_WiE9PNInY2bgyHGJH0DbKd0PKL9RApXxVPKJjUY/) in [TC39 2021-12 meeting](https://github.com/tc39/notes/blob/main/meetings/2021-12/dec-14.md#intl-locale-info-stage-3-update)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1_GAPg4P6FWNN9vJ_BwAHMsjikF7WHuJUX7VJczV0t0Y) in [TC39 2022-11 meeting](https://github.com/tc39/notes/blob/main/meetings/2022-11/nov-30.md#intl-locale-info-stage-3-update)
-* [Update during Stage 3](https://docs.google.com/presentation/d/1_GAPg4P6FWNN9vJ_BwAHMsjikF7WHuJUX7VJczV0t0Y) in TC39 2023-01 meeting
+* [Update during Stage 3](https://docs.google.com/presentation/d/1L_-IRdBeLaOrnj-EFmUWxB_ALe9T_Mvzy4IajuWTg1E) in TC39 2023-01 meeting
 ### Entrance Criteria for Stage 1 (Proposal)
 * Identified “champion” who will advance the addition: **Frank Yung-Fong Tang**
 * Prose outlining the problem or need and the general shape of a solution: **See this document**
