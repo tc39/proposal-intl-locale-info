@@ -17,6 +17,7 @@ Stage 3
 * [Update during Stage 3](https://docs.google.com/presentation/d/1L_-IRdBeLaOrnj-EFmUWxB_ALe9T_Mvzy4IajuWTg1E) in [TC39 2023-01 meeting
 ](https://github.com/tc39/notes/blob/main/meetings/2023-01/jan-31.md#intl-locale-info-api-stage-3-update)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1mJS1ZHnUr66nq9P4HZUrGzaujVS1nI_Rmpf7SoPIiso/) in TC39 2023-07 meeting
+* [Update during Stage 3](https://docs.google.com/presentation/d/1pr3lp_gPcaitmmiQZq2xQGEoG-1cfpOU1agLKAYmPqQ) in TC39 2023-09 meeting
 
 ### Entrance Criteria for Stage 1 (Proposal)
 * Identified “champion” who will advance the addition: **Frank Yung-Fong Tang**
