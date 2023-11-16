@@ -106,10 +106,10 @@
 
     </emu-clause>
 
-    <emu-clause id="sec-weekday-to-number" aoid=WeekdayToNumber>
-      <h1>WeekdayToNumber ( _fw_ )</h1>
+    <emu-clause id="sec-weekday-to-string" aoid=WeekdayToString>
+      <h1>WeekdayToString ( _fw_ )</h1>
       <p>
-        The abstract operation WeekdayToNumber accepts the argument _fw_ , and performs the following steps:
+        The abstract operation WeekdayToString accepts the argument _fw_ , and performs the following steps:
       </p>
       <emu-alg>
         1. For each row of <emu-xref href="#table-locale-first-day-option-type"></emu-xref>, except the header row, in table order, do
@@ -187,59 +187,6 @@
           <tr>
             <td>*"7"*</td>
             <td>*"sun"*</td>
-          </tr>
-        </table>
-      </emu-table>
-    </emu-clause>
-
-    <emu-clause id="sec-weekday-to-string" aoid=WeekdayToString>
-      <h1>WeekdayToString ( _fw_ )</h1>
-      <p>
-        The abstract operation WeekdayToString accepts the argument _fw_ , and performs the following steps:
-      </p>
-      <emu-alg>
-        1. For each row of <emu-xref href="#table-locale-first-day-type-number"></emu-xref>, except the header row, in table order, do
-          1. Let _t_ be the name given in the Type column of the row.
-          1. Let _n_ be the name given in the Number column of the row.
-          1. If _fw_ is equal to _t_, return _n_.
-        1. Assert: Should not reach here.
-      </emu-alg>
-      <emu-table id="table-locale-first-day-type-number">
-        <emu-caption>First Day Type and Number</emu-caption>
-        <table class="real-table">
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Number</th>
-            </tr>
-          </thead>
-          <tr>
-            <td>*"mon"*</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>*"tue"*</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>*"wed"*</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>*"thu"*</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>*"fri"*</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>*"sat"*</td>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>*"sun"*</td>
-            <td>7</td>
           </tr>
         </table>
       </emu-table>
@@ -439,10 +386,7 @@
         1. Set _locale_.[[Locale]] to _r_.[[locale]].
         1. Set _locale_.[[Calendar]] to _r_.[[ca]].
         1. Set _locale_.[[Collation]] to _r_.[[co]].
-        1. <ins>Let _firstDay_ be *undefined*.</ins>
-        1. <ins>If _r_.[[fw]] is not *undefined*, then</ins>
-          1. <ins>Set _firstDay_ to ! WeekdayToNumber(_r_.[[fw]]).</ins>
-        1. <ins>Set _locale_.[[FirstDayOfWeek]] to _firstDay_.</ins>
+        1. <ins>Set _locale_.[[FirstDayOfWeek]] to _r_.[[fw]].</ins>
         1. Set _locale_.[[HourCycle]] to _r_.[[hc]].
         1. If _relevantExtensionKeys_ contains *"kf"*, then
           1. Set _locale_.[[CaseFirst]] to _r_.[[kf]].
@@ -774,7 +718,7 @@
       <li>[[Locale]] is a String value with the language tag of the locale whose localization is used for formatting.</li>
       <li>[[Calendar]] is a String value that is a syntactically valid type value as given in <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">Unicode Technical Standard #35 Part 1 Core, Section 3.2 Unicode Locale Identifier</a>, or is *undefined*.</li>
       <li>[[Collation]] is a String value that is a syntactically valid type value as given in <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">Unicode Technical Standard #35 Part 1 Core, Section 3.2 Unicode Locale Identifier</a>, or is *undefined*.</li>
-      <li><ins>[[FirstDayOfWeek]] is a non-negative integer Number value indicating which day of the week is considered the 'first' day, for calendar purposes, or is *undefined*.</ins></li>
+      <li><ins>[[FirstDayOfWeek]] is a String value that is a syntactically valid type value as given in <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">Unicode Technical Standard #35 Part 1 Core, Section 3.2 Unicode Locale Identifier</a>, or is *undefined*.</ins></li>
       <li>[[HourCycle]] is a String value that is a syntactically valid type value as given in <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">Unicode Technical Standard #35 Part 1 Core, Section 3.2 Unicode Locale Identifier</a>, or is *undefined*.</li>
       <li>[[NumberingSystem]] is a String value that is a syntactically valid type value as given in <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">Unicode Technical Standard #35 Part 1 Core, Section 3.2 Unicode Locale Identifier</a>, or is *undefined*.</li>
       <li>[[CaseFirst]] is a String value that is a syntactically valid type value as given in <a href="https://unicode.org/reports/tr35/#Unicode_locale_identifier">Unicode Technical Standard #35 Part 1 Core, Section 3.2 Unicode Locale Identifier</a>, or is *undefined*. This internal slot only exists if the [[RelevantExtensionKeys]] internal slot of %Locale% contains *"kf"*.</li>
