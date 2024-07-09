@@ -196,6 +196,10 @@
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _r_ be a record whose fields are defined by <emu-xref href="#table-locale-weekinfo-record"></emu-xref>, with values based on _locale_.
+        1. Let _ca_ be _loc_.[[Calendar]].
+        1. If _ca_ is  *"iso8601"*, then
+          1. Set _r_.[[FirstDay]] to *"mon"*.
+          1. Set _r_.[[MinimalDays]] to *4*.
         1. Let _fws_ be _loc_.[[FirstDayOfWeek]].
         1. Let _fw_ be !StringToWeekdayValue(_fws_).
         1. If _fw_ is not *undefined*, then
