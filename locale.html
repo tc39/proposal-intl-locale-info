@@ -112,56 +112,79 @@
         The abstract operation WeekdayToString accepts the argument _fw_ , and performs the following steps:
       </p>
       <emu-alg>
-        1. For each row of <emu-xref href="#table-locale-first-day-option-type"></emu-xref>, except the header row, in table order, do
-          1. Let _v_ be the name given in the Value column of the row.
-          1. Let _t_ be the name given in the Type column of the row.
-          1. If _fw_ is equal to _v_, return _t_.
+        1. For each row of <emu-xref href="#table-locale-first-day-option-value"></emu-xref>, except the header row, in table order, do
+          1. Let _w_ be the name given in the Weekday column of the row.
+          1. Let _s_ be the name given in the String column of the row.
+          1. If _fw_ is equal to _w_, return _s_.
         1. Return _fw_.
       </emu-alg>
 
-      <emu-table id="table-locale-first-day-option-type">
-        <emu-caption>First Day Value and Type</emu-caption>
+      <emu-table id="table-locale-first-day-option-value">
+        <emu-caption>First Day String and Value</emu-caption>
         <table class="real-table">
           <thead>
             <tr>
+              <th>Weekday</th>
+              <th>String</th>
               <th>Value</th>
-              <th>Type</th>
             </tr>
           </thead>
           <tr>
             <td>*"0"*</td>
             <td>*"sun"*</td>
+            <td>*7*</td>
           </tr>
           <tr>
             <td>*"1"*</td>
             <td>*"mon"*</td>
+            <td>*1*</td>
           </tr>
           <tr>
             <td>*"2"*</td>
             <td>*"tue"*</td>
+            <td>*2*</td>
           </tr>
           <tr>
             <td>*"3"*</td>
             <td>*"wed"*</td>
+            <td>*3*</td>
           </tr>
           <tr>
             <td>*"4"*</td>
             <td>*"thu"*</td>
+            <td>*4*</td>
           </tr>
           <tr>
             <td>*"5"*</td>
             <td>*"fri"*</td>
+            <td>*5*</td>
           </tr>
           <tr>
             <td>*"6"*</td>
             <td>*"sat"*</td>
+            <td>*6*</td>
           </tr>
           <tr>
             <td>*"7"*</td>
             <td>*"sun"*</td>
+            <td>*7*</td>
           </tr>
         </table>
       </emu-table>
+    </emu-clause>
+
+    <emu-clause id="sec-string-to-weekday-value" aoid=StringToWeekdayValue>
+      <h1>StringToWeekdayValue ( _fw_ )</h1>
+      <p>
+        The abstract operation StringToWeekdayValue accepts the argument _fw_ , and performs the following steps:
+      </p>
+      <emu-alg>
+        1. For each row of <emu-xref href="#table-locale-first-day-option-value"></emu-xref>, except the header row, in table order, do
+          1. Let _s_ be the name given in the String column of the row.
+          1. Let _v_ be the name given in the Value column of the row.
+          1. If _fw_ is equal to _s_, return _v_.
+        1. Return *undefined*.
+      </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-week-info-of-locale" aoid=WeekInfoOfLocale>
@@ -173,7 +196,8 @@
         1. Let _locale_ be _loc_.[[Locale]].
         1. Assert: _locale_ matches the `unicode_locale_id` production.
         1. Let _r_ be a record whose fields are defined by <emu-xref href="#table-locale-weekinfo-record"></emu-xref>, with values based on _locale_.
-        1. Let _fw_ be _loc_.[[FirstDayOfWeek]].
+        1. Let _fws_ be _loc_.[[FirstDayOfWeek]].
+        1. Let _fw_ be !StringToWeekdayValue(_fws_).
         1. If _fw_ is not *undefined*, then
           1. Set _r_.[[FirstDay]] to _fw_.
         1. Return _r_.
