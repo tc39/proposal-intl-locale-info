@@ -299,5 +299,5 @@ l.unitInfo
 
 | Polyfill                                                                         | Repo                                                                               |
 | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- 
-| **[@bart-krakowski/get-week-info-polyfill](https://www.npmjs.com/package/@js-temporal/polyfill)** | [@bart-krakowski/get-week-info-polyfill](https://github.com/bart-krakowski/get-week-info-polyfill)
+| **[@bart-krakowski/get-week-info-polyfill](https://www.npmjs.com/package/@bart-krakowski/get-week-info-polyfill)** | [@bart-krakowski/get-week-info-polyfill](https://github.com/bart-krakowski/get-week-info-polyfill)
 
