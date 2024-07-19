@@ -19,6 +19,8 @@ Stage 3
 * [Update during Stage 3](https://docs.google.com/presentation/d/1mJS1ZHnUr66nq9P4HZUrGzaujVS1nI_Rmpf7SoPIiso/) in TC39 2023-07 meeting
 * [Update during Stage 3](https://docs.google.com/presentation/d/1pr3lp_gPcaitmmiQZq2xQGEoG-1cfpOU1agLKAYmPqQ) in TC39 2023-09 meeting
 * [Update during Stage 3](https://docs.google.com/presentation/d/1p4PF5mnDCdLaUXEBgQwe0GUAPZODhzFDiFtyUB5q-h4/edit#slide=id.g29ff3190299_0_1) in TC39 2023-11 meeting
+* [Update during Stage 3](https://docs.google.com/presentation/d/1wWDYg5BF1wNNAdC6YbBKvRtKS1acyvIP0eLkWCH2c7M/) in TC39 2024-07 meeting
+
 
 ### Entrance Criteria for Stage 1 (Proposal)
 * Identified “champion” who will advance the addition: **Frank Yung-Fong Tang**
