@@ -2006,6 +2006,10 @@ li.menu-search-result-term:before {
       </p>
       <emu-alg><ol><li>Let <var>locale</var> be <var>loc</var>.[[Locale]].</li><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <var>locale</var> matches the <code>unicode_locale_id</code> production.</li><li>Let <var>r</var> be a record whose fields are defined by <emu-xref href="#table-locale-weekinfo-record" id="_ref_2"><a href="#table-locale-weekinfo-record">Table 2</a></emu-xref>, with values based on <var>locale</var>.</li><li>Let <var>fws</var> be <var>loc</var>.[[FirstDayOfWeek]].</li><li>Let <var>fw</var> be !<emu-xref aoid="StringToWeekdayValue" id="_ref_17"><a href="#sec-string-to-weekday-value">StringToWeekdayValue</a></emu-xref>(<var>fws</var>).</li><li>If <var>fw</var> is not <emu-val>undefined</emu-val>, then<ol><li>Set <var>r</var>.[[FirstDay]] to <var>fw</var>.</li></ol></li><li>Return <var>r</var>.</li></ol></emu-alg>
 
+      <emu-note><span class="note">Note</span><div class="note-contents">
+        The record's return values are determined by <var>locale</var>, in accordance with the specifications outlined in <a href="https://www.unicode.org/reports/tr35/tr35-dates.html#Week_Data">UTS 35's Week Data</a> and <a href="https://www.unicode.org/reports/tr35/tr35-dates.html#first-day-overrides">First Day Overrides</a>.
+      </div></emu-note>
+
       <emu-table id="table-locale-weekinfo-record"><figure><figcaption>Table 2: WeekInfo <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref> Fields</figcaption>
         
         <table class="real-table">
