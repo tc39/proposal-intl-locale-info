@@ -161,9 +161,15 @@
       </dl>
       <emu-alg>
         1. Let _restricted_ be _loc_.[[NumberingSystem]].
-        1. Let _locale_ be _loc_.[[Locale]].
-        1. Let _list_ be a List of one or more unique numbering system identifiers in canonical form (<emu-xref href="#sec-numberingsystem-identifiers"></emu-xref>), sorted in descending preference of those in common use for formatting numeric values in _locale_.
-        1. Return CreateArrayFromListOrRestricted( _list_, _restricted_ ).
+        1. Let _r_ be LookupMatchingLocaleByPrefix(%Intl.NumberFormat%.[[AvailableLocales]], &laquo; _loc_.[[Locale]] &raquo;).
+        1. If _r_ is not *undefined*, then
+          1. Let _foundLocale_ be _r_.[[locale]].
+          1. Let _foundLocaleData_ be %Intl.NumberFormat%.[[LocaleData]].[[&lt;_foundLocale_&gt;]].
+          1. Let _numberingSystems_ be _foundLocaleData_.[[nu]].
+          1. Let _list_ be &laquo; _numberingSystems_[0] &raquo;.
+        1. Else,
+          1. Let _list_ be &laquo; *"latn"* &raquo;.
+        1. Return CreateArrayFromListOrRestricted(_list_, _restricted_).
       </emu-alg>
     </emu-clause>
 
