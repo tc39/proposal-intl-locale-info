@@ -191,11 +191,17 @@
       </h1>
       <dl class="header">
         <dt>description</dt>
-        <dd>The following algorithm refers to Locale data specified in <a href="https://www.unicode.org/reports/tr35/tr35-general.html#Layout_Elements">UTS 35's Layouts Elements</a>.</dd>
+        <dd>The following algorithm refers to Locale data specified in <a href="https://unicode.org/reports/tr35/tr35.html#Script_Metadata">UTS 35's Script Metadata</a>.</dd>
       </dl>
       <emu-alg>
         1. Let _locale_ be _loc_.[[Locale]].
-        1. If the default general ordering of characters (characterOrder) within a line in _locale_ is right-to-left, return *"rtl"*.
+        1. Let _script_ be GetLocaleScript(_locale_).
+        1. If _script_ is *undefined*, then
+            1. Let _maximal_ be the result of the <a href="https://unicode.org/reports/tr35/#Likely_Subtags">Add Likely Subtags</a> algorithm applied to _locale_. If an error is signaled, set _maximal_ to _locale_.
+            1. Set _maximal_ to CanonicalizeUnicodeLocaleId(_maximal_).
+            1. Set _script_ to GetLocaleScript(_maximal_).
+            1. If _script_ is *undefined*, set _script_ to *"Zzzz"*.
+        1. If _script_ contains right-to-left letters according to its script metadata, return *"rtl"*.
         1. Return *"ltr"*.
       </emu-alg>
     </emu-clause>
