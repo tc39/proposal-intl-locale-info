@@ -120,9 +120,21 @@
       </dl>
       <emu-alg>
         1. Let _restricted_ be _loc_.[[Collation]].
-        1. Let _locale_ be _loc_.[[Locale]].
-        1. Let _list_ be a List of one or more unique collation types in canonical form (<emu-xref href="#sec-collation-types"></emu-xref>), of those in common use for string comparison in _locale_. The values *"standard"* and *"search"* must be excluded from _list_. The list is sorted according to lexicographic code unit order.
-        1. Return CreateArrayFromListOrRestricted( _list_, _restricted_ ).
+        1. Let _language_ be GetLocaleLanguage(_loc_.[[Locale]]).
+        1. If _language_ is not *"und"*, then
+          1. Let _r_ be LookupMatchingLocaleByPrefix(%Intl.Collator%.[[AvailableLocales]], &laquo; _loc_.[[Locale]] &raquo;).
+          1. If _r_ is not *undefined*, then
+            1. Let _foundLocale_ be _r_.[[locale]].
+          1. Else,
+            1. Let _foundLocale_ be DefaultLocale().
+          1. Let _foundLocaleData_ be %Intl.Collator%.[[SortLocaleData]].[[&lt;_foundLocale_&gt;]].
+          1. Let _list_ be a copy of _foundLocaleData_.[[co]].
+          1. Assert: _list_[0] is *null*.
+          1. Remove the first element from _list_.
+        1. Else,
+          1. Let _list_ be &laquo; *"emoji"*, *"eor"* &raquo;.
+        1. Let _sorted_ be a copy of _list_, sorted according to lexicographic code unit order.
+        1. Return CreateArrayFromListOrRestricted(_sorted_, _restricted_).
       </emu-alg>
     </emu-clause>
 
