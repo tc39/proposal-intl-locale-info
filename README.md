@@ -16,10 +16,10 @@ Stage 3
 * [Update during Stage 3](https://docs.google.com/presentation/d/1_GAPg4P6FWNN9vJ_BwAHMsjikF7WHuJUX7VJczV0t0Y) in [TC39 2022-11 meeting](https://github.com/tc39/notes/blob/main/meetings/2022-11/nov-30.md#intl-locale-info-stage-3-update)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1L_-IRdBeLaOrnj-EFmUWxB_ALe9T_Mvzy4IajuWTg1E) in [TC39 2023-01 meeting
 ](https://github.com/tc39/notes/blob/main/meetings/2023-01/jan-31.md#intl-locale-info-api-stage-3-update)
-* [Update during Stage 3](https://docs.google.com/presentation/d/1mJS1ZHnUr66nq9P4HZUrGzaujVS1nI_Rmpf7SoPIiso/) in TC39 2023-07 meeting
-* [Update during Stage 3](https://docs.google.com/presentation/d/1pr3lp_gPcaitmmiQZq2xQGEoG-1cfpOU1agLKAYmPqQ) in TC39 2023-09 meeting
-* [Update during Stage 3](https://docs.google.com/presentation/d/1p4PF5mnDCdLaUXEBgQwe0GUAPZODhzFDiFtyUB5q-h4/edit#slide=id.g29ff3190299_0_1) in TC39 2023-11 meeting
-* [Update during Stage 3](https://docs.google.com/presentation/d/1wWDYg5BF1wNNAdC6YbBKvRtKS1acyvIP0eLkWCH2c7M/) in TC39 2024-07 meeting
+* [Update during Stage 3](https://docs.google.com/presentation/d/1mJS1ZHnUr66nq9P4HZUrGzaujVS1nI_Rmpf7SoPIiso/) in [TC39 2023-07 meeting](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-12.md#stage-3-update-of-intl-locale-info-api)
+* [Update during Stage 3](https://docs.google.com/presentation/d/1pr3lp_gPcaitmmiQZq2xQGEoG-1cfpOU1agLKAYmPqQ) in [TC39 2023-09 meeting](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-26.md#stage-3-update-of-intl-locale-info-api)
+* [Update during Stage 3](https://docs.google.com/presentation/d/1p4PF5mnDCdLaUXEBgQwe0GUAPZODhzFDiFtyUB5q-h4/edit#slide=id.g29ff3190299_0_1) in [TC39 2023-11 meeting](https://github.com/tc39/notes/blob/main/meetings/2023-11/november-28.md#stage-3-update-of-intl-locale-info-api)
+* [Update during Stage 3](https://docs.google.com/presentation/d/1wWDYg5BF1wNNAdC6YbBKvRtKS1acyvIP0eLkWCH2c7M/) in [TC39 2024-07 meeting](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-30.md#intllocale-update-in-stage-3)
 
 
 ### Entrance Criteria for Stage 1 (Proposal)
