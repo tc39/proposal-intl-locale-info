@@ -1,19 +1,21 @@
 {
   "private": true,
-  "name": "template-for-proposals",
-  "description": "A repository template for ECMAScript proposals.",
+  "name": "proposal-intl-locale-info",
+  "description": "An API to expose information of locales.",
   "scripts": {
     "start": "npm run build-loose -- --watch",
     "build": "npm run build-loose -- --strict",
-    "build-loose": "ecmarkup --verbose spec.emu index.html"
+    "build-loose": "ecmarkup --verbose --lint-spec --load-biblio @tc39/ecma262-biblio --load-biblio @tc39/ecma402-biblio spec.emu index.html"
   },
-  "homepage": "https://github.com/tc39/template-for-proposals#readme",
+  "homepage": "https://tc39.es/proposal-intl-locale-info/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tc39/template-for-proposals.git"
+    "url": "git+https://github.com/tc39/proposal-intl-locale-info.git"
   },
   "license": "MIT",
   "devDependencies": {
-    "ecmarkup": "^4.2.3"
+    "@tc39/ecma262-biblio": "=2.1.2750",
+    "@tc39/ecma402-biblio": "=2.1.1105",
+    "ecmarkup": "^19.0.0"
   }
 }
