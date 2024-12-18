@@ -116,6 +116,9 @@
         1. If the default general ordering of characters (characterOrder) within a line in _locale_ is right-to-left, return *"rtl"*.
         1. Return *"ltr"*.
       </emu-alg>
+      <emu-note>
+        When the direction of default general ordering of characters (characterOrder) within a line in the locale cannot be determined, or is not right-to-left, *"ltr"* will be retruned.
+      </emu-note>
     </emu-clause>
 
     <emu-clause id="sec-weekday-to-string" type="abstract operation">
