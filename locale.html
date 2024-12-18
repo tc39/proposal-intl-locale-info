@@ -113,11 +113,16 @@
       </dl>
       <emu-alg>
         1. Let _locale_ be _loc_.[[Locale]].
-        1. If the default general ordering of characters (characterOrder) within a line in _locale_ is right-to-left, return *"rtl"*.
+        1. Let _script_ be GetLocaleScript(_locale_).
+        1. If _script_ is *undefined*, then
+          1. Let _maximal_ be the result of the <a href="https://unicode.org/reports/tr35/#Likely_Subtags">Add Likely Subtags</a> algorithm applied to _locale_. If an error is signaled, return *"ltr"*.
+          1. Set _script_ to GetLocaleScript(_maximal_).
+          1. If _script_ is *undefined*, return *"ltr"*.
+        1. If the default general ordering of characters within a line in _script_ is right-to-left, return *"rtl"*.
         1. Return *"ltr"*.
       </emu-alg>
       <emu-note>
-        When the direction of default general ordering of characters (characterOrder) within a line in the locale cannot be determined, or is not right-to-left, *"ltr"* will be retruned.
+        When the direction of default general ordering of characters within a line in the _script_ cannot be determined, or is not right-to-left, *"ltr"* will be retruned.
       </emu-note>
     </emu-clause>
 
