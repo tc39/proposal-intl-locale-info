@@ -252,11 +252,6 @@
             <td>A List of one or more integral Number values, in ascending order, between *1*<sub>𝔽</sub> and *7*<sub>𝔽</sub>: *1*<sub>𝔽</sub> specifies Monday; *2*<sub>𝔽</sub> specifies Tuesday; *3*<sub>𝔽</sub> specifies Wednesday; *4*<sub>𝔽</sub> specifies Thursday; *5*<sub>𝔽</sub> specifies Friday; *6*<sub>𝔽</sub> specifies Saturday; and *7*<sub>𝔽</sub> specifies Sunday.</td>
             <td>The list of weekday values indicating which days of the week are considered as part of the 'weekend', for calendar purposes. Notice that the number of days in the weekend are different in each locale and may not be contiguous.</td>
           </tr>
-          <tr>
-            <td>[[MinimalDays]]</td>
-            <td>Integral Number value between *1*<sub>𝔽</sub> and *7*<sub>𝔽</sub>.</td>
-            <td>The minimal days required in the first week of a month or year, for calendar purposes.</td>
-          </tr>
         </table>
       </emu-table>
     </emu-clause>
@@ -445,7 +440,6 @@
         1. Let _we_ be CreateArrayFromList(_wi_.[[Weekend]]).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"firstDay"*, _wi_.[[FirstDay]]).
         1. Perform ! CreateDataPropertyOrThrow(_info_, *"weekend"*, _we_).
-        1. Perform ! CreateDataPropertyOrThrow(_info_, *"minimalDays"*, _wi_.[[MinimalDays]]).
         1. Return _info_.
       </emu-alg>
     </emu-clause>

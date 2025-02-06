@@ -65,7 +65,7 @@ Stage 3
 
 ## Scope
 
-A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day, minimum day in the first week), and text direction hour cycle used in the locale ~,measurement system used in the locale~.
+A proposal to expose Locale information, such as week data (first day in a week, weekend start day, weekend end  day), and text direction hour cycle used in the locale ~,measurement system used in the locale~.
 
 * Week Data: (User request: https://github.com/tc39/ecma402/issues/6 )
   * Prior Arts: 
@@ -106,17 +106,17 @@ Add methods to Intl to get object to contains group of information:
 ```js
 let he = new Intl.Locale("he")
 he.getWeekInfo()
-// {firstDay: 7, weekend: [5, 6], minimalDays: 1}
+// {firstDay: 7, weekend: [5, 6]}
 let af = new Intl.Locale("af")
 af.getWeekInfo()
-// {firstDay: 7, weekend: [6, 7], minimalDays: 1}
+// {firstDay: 7, weekend: [6, 7]}
 enGB = new Intl.Locale("en-GB")
 enGB.getWeekInfo()
-// {firstDay: 1, weekend: [6, 7], minimalDays: 4}
+// {firstDay: 1, weekend: [6, 7]}
 
 let msBN = new Intl.Locale("ms-BN")
 msBN.getWeekInfo()
-// {firstDay: 7, weekend: [5, 7], minimalDays: 1}  // Brunei weekend is Friday and Sunday but not Saturday 
+// {firstDay: 7, weekend: [5, 7]}  // Brunei weekend is Friday and Sunday but not Saturday 
 ```
 Monday is 1 and Sunday is 7, as defined by ISO-8861 and followed by [Temporal proposal](https://tc39.es/proposal-temporal/#sec-temporal-todayofweek)
 #### Text Information
