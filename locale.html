@@ -101,11 +101,11 @@
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-locale-is-right-to-left" type="abstract operation">
+    <emu-clause id="sec-locale-direction" type="abstract operation">
       <h1>
-        LocaleIsRightToLeft (
+        LocaleDirection (
           _loc_: an Intl.Locale,
-        ): a Boolean
+        ): a String or *undefined*
       </h1>
       <dl class="header">
         <dt>description</dt>
@@ -115,14 +115,15 @@
         1. Let _locale_ be _loc_.[[Locale]].
         1. Let _script_ be GetLocaleScript(_locale_).
         1. If _script_ is *undefined*, then
-          1. Let _maximal_ be the result of the <a href="https://unicode.org/reports/tr35/#Likely_Subtags">Add Likely Subtags</a> algorithm applied to _locale_. If an error is signaled, return *false*.
+          1. Let _maximal_ be the result of the <a href="https://unicode.org/reports/tr35/#Likely_Subtags">Add Likely Subtags</a> algorithm applied to _locale_. If an error is signaled, return *undefined*.
           1. Set _script_ to GetLocaleScript(_maximal_).
-          1. If _script_ is *undefined*, return *false*.
-        1. If the default general ordering of characters within a line in _script_ is right-to-left, return *true*.
-        1. Return *false*.
+          1. If _script_ is *undefined*, return *undefined*.
+        1. If the default general ordering of characters within a line in _script_ is right-to-left, return "rtl".
+        1. If the default general ordering of characters within a line in _script_ is left-to-right, return "ltr".
+        1. Return *undefined*.
       </emu-alg>
       <emu-note>
-        When the direction of default general ordering of characters within a line in the _script_ cannot be determined, or is not right-to-left, *false* will be returned.
+        When the direction of default general ordering of characters within a line in the _script_ cannot be determined, or the diretion is neither right-to-left nor left-to-right, *undefined* will be returned.
       </emu-note>
     </emu-clause>
 
@@ -428,10 +429,9 @@
         1. Let _loc_ be the *this* value.
         1. Perform ? RequireInternalSlot(_loc_, [[InitializedLocale]]).
         1. Let _info_ be OrdinaryObjectCreate(%Object.prototype%).
-        1. Let _dir_ be *"ltr"*.
-        1. If LocaleIsRightToLeft(_loc_) is *true*, then
-          1. Set _dir_ to *"rtl"*.
-        1. Perform ! CreateDataPropertyOrThrow(_info_, *"direction"*, _dir_).
+        1. Let _dir_ be LocaleDirection(_loc_).
+        1. If _dir_ is not *undefined*, then
+          1. Perform ! CreateDataPropertyOrThrow(_info_, *"direction"*, _dir_).
         1. Return _info_.
       </emu-alg>
     </emu-clause>
