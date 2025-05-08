@@ -120,10 +120,11 @@
           1. If _script_ is *undefined*, return *undefined*.
         1. If the default general ordering of characters within a line in _script_ is right-to-left, return "rtl".
         1. If the default general ordering of characters within a line in _script_ is left-to-right, return "ltr".
+        1. If the default general ordering of characters within a line in _script_ is top-to-bottom, return "ttb".
         1. Return *undefined*.
       </emu-alg>
       <emu-note>
-        When the direction of default general ordering of characters within a line in the _script_ cannot be determined, or the diretion is neither right-to-left nor left-to-right, *undefined* will be returned.
+        When the direction of default general ordering of characters within a line in the _script_ cannot be determined, or the diretion is not one of right-to-left, left-to-right, or top-to-bottom, then *undefined* will be returned.
       </emu-note>
     </emu-clause>
 
