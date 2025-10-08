@@ -125,6 +125,9 @@
       <emu-note>
         When the direction of default general ordering of characters within a line in the _script_ cannot be determined, or the direction is neither right-to-left nor left-to-right, then *undefined* will be returned.
       </emu-note>
+      <emu-note>
+        Text in a language may have more than one possible direction. Text in a language written in one script may also have more than one possible direction. Therefore, if there is direction information included in the metadata associated with a piece of text, that direction information should be considered as the primary source of truth. The information returned by LocaleDirection should only be used as a fallback mechanism while there is no metadata associated with the text to provide the direction information of the text. It should only be used while the direction information is not present but language information is known. Web developers should not rely too much on this API to decide the direction of the text, but rather utilize <a href="https://www.w3.org/TR/string-meta/#script_subtag">string-meta</a> to encode the required direction information. 
+      </emu-note>
     </emu-clause>
 
     <emu-clause id="sec-weekday-to-string" type="abstract operation">
