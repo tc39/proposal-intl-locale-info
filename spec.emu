@@ -14,7 +14,7 @@ contributors: Google, Ecma International
 <emu-intro id="sec-intro">
   <h1>Introduction</h1>
 
-  <p>This proposal exposes Locale information, such as week data (first day in a week, weekend start day, weekend end day, minimun day in the first week), hour cycle used in the locale, measurement system used in the locale.
+  <p>This proposal exposes Locale information, such as week data (first day in a week, weekend start day, weekend end day), hour cycle used in the locale, measurement system used in the locale.
   See <a href="https://github.com/tc39/proposal-intl-locale-info/blob/main/README.md">the README</a> for more context.</p>
 </emu-intro>
 
