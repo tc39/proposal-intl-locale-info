@@ -9,7 +9,7 @@ Stage 3
 * Advanced to [Stage 2](https://docs.google.com/presentation/d/1ct7h9pLHmXCwojGlReNjAT9RgysqLk_3lyUcllnOQYs/) in [TC39 2021-01-25~28 meeting](https://github.com/tc39/agendas/blob/master/2021/01.md).
   * Jan 2021 TC39 meeting approve to move to Stage 2 **WITH the condition to drop unitInfo**
 * 2021-04-08 ECMA402 meeting, we agreed to propose to TC39 for Stage 3.
-* Advanced to [advance to Stage 3](https://docs.google.com/presentation/d/1h-iaDM5RiD5rpb0aYr1GMRLRRBh72zVEKtMyMJkCkfE/edit#slide=id.g98718d9573_0_37) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
+* [Advance to Stage 3](https://docs.google.com/presentation/d/1h-iaDM5RiD5rpb0aYr1GMRLRRBh72zVEKtMyMJkCkfE/edit#slide=id.g98718d9573_0_37) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
 * [Update during Stage 3](https://docs.google.com/presentation/d/1rrEaInlUFpYJ3djkRfQHpMBzt0C88WuQeFGis8x9UP8/) in [TC39 2021-07 meeting](https://github.com/tc39/agendas/blob/master/2021/07.md).
 * [Update during Stage 3](https://docs.google.com/presentation/d/1-Jhck0M2zhkiWsSxTX_bTik7e5072Xw87f_KOVSbfs0/) in [TC39 2021-10 meeting](https://github.com/tc39/notes/blob/master/meetings/2021-10/oct-26.md#intl-locale-info-update)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1PZ0_WiE9PNInY2bgyHGJH0DbKd0PKL9RApXxVPKJjUY/) in [TC39 2021-12 meeting](https://github.com/tc39/notes/blob/main/meetings/2021-12/dec-14.md#intl-locale-info-stage-3-update)
