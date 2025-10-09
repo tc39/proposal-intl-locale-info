@@ -21,7 +21,7 @@ Stage 3
 * [Update during Stage 3](https://docs.google.com/presentation/d/1p4PF5mnDCdLaUXEBgQwe0GUAPZODhzFDiFtyUB5q-h4/edit#slide=id.g29ff3190299_0_1) in [TC39 2023-11 meeting](https://github.com/tc39/notes/blob/main/meetings/2023-11/november-28.md#stage-3-update-of-intl-locale-info-api)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1wWDYg5BF1wNNAdC6YbBKvRtKS1acyvIP0eLkWCH2c7M/) in [TC39 2024-07 meeting](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-30.md#intllocale-update-in-stage-3)
 * [Update during Stage 3](https://docs.google.com/presentation/d/14ColNEWDFlAnPGW6GSPSk6gbcdTmSy4pYuYXOwDlZX8) in [TC39 2025-02 meeting](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md#intl-locale-info-stage-3-update-normative-return-undefined-if-direction-is-unknown)
-* Plan to advance to Stage 4 in TC 2025-11 meeting
+* Plan to [advance to Stage 4](https://docs.google.com/presentation/d/17FKrRkWCfNdYui9uRQDRYzv2c3cOCp6ZM7Rly9MwGHM) in TC 2025-11 meeting
 
 ### Entrance Criteria for Stage 1 (Proposal)
 * Identified “champion” who will advance the addition: **Frank Yung-Fong Tang**
