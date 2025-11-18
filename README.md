@@ -9,7 +9,7 @@ Stage 3
 * Advanced to [Stage 2](https://docs.google.com/presentation/d/1ct7h9pLHmXCwojGlReNjAT9RgysqLk_3lyUcllnOQYs/) in [TC39 2021-01-25~28 meeting](https://github.com/tc39/agendas/blob/master/2021/01.md).
   * Jan 2021 TC39 meeting approve to move to Stage 2 **WITH the condition to drop unitInfo**
 * 2021-04-08 ECMA402 meeting, we agreed to propose to TC39 for Stage 3.
-* Advanced to [advance to Stage 3](https://docs.google.com/presentation/d/1h-iaDM5RiD5rpb0aYr1GMRLRRBh72zVEKtMyMJkCkfE/edit#slide=id.g98718d9573_0_37) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
+* [Advance to Stage 3](https://docs.google.com/presentation/d/1h-iaDM5RiD5rpb0aYr1GMRLRRBh72zVEKtMyMJkCkfE/edit#slide=id.g98718d9573_0_37) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
 * [Update during Stage 3](https://docs.google.com/presentation/d/1rrEaInlUFpYJ3djkRfQHpMBzt0C88WuQeFGis8x9UP8/) in [TC39 2021-07 meeting](https://github.com/tc39/agendas/blob/master/2021/07.md).
 * [Update during Stage 3](https://docs.google.com/presentation/d/1-Jhck0M2zhkiWsSxTX_bTik7e5072Xw87f_KOVSbfs0/) in [TC39 2021-10 meeting](https://github.com/tc39/notes/blob/master/meetings/2021-10/oct-26.md#intl-locale-info-update)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1PZ0_WiE9PNInY2bgyHGJH0DbKd0PKL9RApXxVPKJjUY/) in [TC39 2021-12 meeting](https://github.com/tc39/notes/blob/main/meetings/2021-12/dec-14.md#intl-locale-info-stage-3-update)
@@ -20,7 +20,8 @@ Stage 3
 * [Update during Stage 3](https://docs.google.com/presentation/d/1pr3lp_gPcaitmmiQZq2xQGEoG-1cfpOU1agLKAYmPqQ) in [TC39 2023-09 meeting](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-26.md#stage-3-update-of-intl-locale-info-api)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1p4PF5mnDCdLaUXEBgQwe0GUAPZODhzFDiFtyUB5q-h4/edit#slide=id.g29ff3190299_0_1) in [TC39 2023-11 meeting](https://github.com/tc39/notes/blob/main/meetings/2023-11/november-28.md#stage-3-update-of-intl-locale-info-api)
 * [Update during Stage 3](https://docs.google.com/presentation/d/1wWDYg5BF1wNNAdC6YbBKvRtKS1acyvIP0eLkWCH2c7M/) in [TC39 2024-07 meeting](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-30.md#intllocale-update-in-stage-3)
-
+* [Update during Stage 3](https://docs.google.com/presentation/d/14ColNEWDFlAnPGW6GSPSk6gbcdTmSy4pYuYXOwDlZX8) in [TC39 2025-02 meeting](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md#intl-locale-info-stage-3-update-normative-return-undefined-if-direction-is-unknown)
+* Plan to [advance to Stage 4](https://docs.google.com/presentation/d/17FKrRkWCfNdYui9uRQDRYzv2c3cOCp6ZM7Rly9MwGHM) in TC 2025-11 meeting
 
 ### Entrance Criteria for Stage 1 (Proposal)
 * Identified “champion” who will advance the addition: **Frank Yung-Fong Tang**
