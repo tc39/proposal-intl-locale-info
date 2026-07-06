@@ -1,5 +1,7 @@
 # Intl Locale Info API
 
+This proposal is fully adopted into the [ECMA-402, 13th edition, June 2026 "ECMAScript® 2026 internationalization API specification"](https://402.ecma-international.org/13.0)
+
 ## Draft Spec
 https://tc39.github.io/proposal-intl-locale-info 
 ## Stage 
